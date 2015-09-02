@@ -11,18 +11,20 @@
 ##  This file was originally contributed to HPC-GAP by Reimer Behrends
 ##
 */
-#ifdef WITH_ZMQ
-
 #include "src/compiled.h"
 #include "zmq.h"
 
+/* XXX this is HPC-GAP specific
 static GVarDescriptor TYPE_ZMQ_SOCKETGVar;
+*/
 static Obj TYPE_ZMQ_SOCKET;
 
 static Obj TypeZmqSocket() {
   /* multiple threads may initialize this concurrently, but that is safe */
+        /*
   if (!TYPE_ZMQ_SOCKET)
     TYPE_ZMQ_SOCKET = GVarObj(&TYPE_ZMQ_SOCKETGVar);
+        */
   return TYPE_ZMQ_SOCKET;
 }
 
@@ -107,11 +109,13 @@ static void SetSocketURI(Obj socket, Obj uri) {
   uri_mem = (char *) ADDR_OBJ(socket)[ZMQ_DAT_URI_OFF];
   if (uri_mem) {
     /* FreeMemoryBlock(uri_mem); */
+          free(uri_mem);
   }
   if (!uri)
     ADDR_OBJ(socket)[ZMQ_DAT_URI_OFF] = (Obj) 0;
   else {
-    uri_mem = AllocateMemoryBlock(GET_LEN_STRING(uri)+1);
+          // uri_mem = mallocAllocateMemoryBlock(GET_LEN_STRING(uri)+1);
+    uri_mem = malloc(GET_LEN_STRING(uri)+1);
     memcpy(uri_mem, CSTR_STRING(uri), GET_LEN_STRING(uri));
     uri_mem[GET_LEN_STRING(uri)] = '\0';
     ADDR_OBJ(socket)[ZMQ_DAT_URI_OFF] = (Obj) uri_mem;
@@ -616,7 +620,9 @@ static Int InitKernel ( StructInitInfo *module )
 {
     /* init filters and functions                                          */
     InitHdlrFuncsFromTable( GVarFuncs );
-    DeclareGVar(&TYPE_ZMQ_SOCKETGVar, "TYPE_ZMQ_SOCKET");
+    ImportGVarFromLibrary( "TYPE_ZMQ_SOCKET", &TYPE_ZMQ_SOCKET );
+
+//    DeclareGVar(&TYPE_ZMQ_SOCKETGVar, "TYPE_ZMQ_SOCKET");
 
     /* return success                                                      */
     return 0;
@@ -668,6 +674,8 @@ StructInitInfo *InitInfoZmq ( void )
   return &module;
 }
 
-
-
-#endif // WITH_ZMQ
+StructInitInfo * Init__Dynamic ( void )
+{
+  FillInVersion( &module );
+  return &module;
+}

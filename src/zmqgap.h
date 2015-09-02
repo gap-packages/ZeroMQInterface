@@ -11,7 +11,6 @@
 ##  This file was originally contributed to HPC-GAP by Reimer Behrends
 ## 
 */
-
 #ifndef GAP_ZMQGAP_H
 
 #define GAP_ZMQGAP_H

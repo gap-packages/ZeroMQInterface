@@ -10,7 +10,7 @@ zeromq_la_SOURCES = \
     src/zmqgap.h
 zeromq_la_CPPFLAGS = $(GAP_CPPFLAGS) -DCONFIG_H
 # Note that the latter is only for GAP 4.4.12
-zeromq_la_LDFLAGS = -module -avoid-version -Bsymbolic 
+zeromq_la_LDFLAGS = -module -avoid-version -Bsymbolic -lzmq -Lextern/zeromq-3.2.3/src/.libs 
 if SYS_IS_CYGWIN
 zeromq_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
 endif
