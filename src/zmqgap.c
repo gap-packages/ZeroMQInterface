@@ -1,3 +1,4 @@
+/*
 #############################################################################
 ##
 #W  zmqgap.c
@@ -9,6 +10,7 @@
 ##
 ##  This file was originally contributed to HPC-GAP by Reimer Behrends
 ##
+*/
 #ifdef WITH_ZMQ
 
 #include "src/compiled.h"

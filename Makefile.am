@@ -15,7 +15,7 @@ if SYS_IS_CYGWIN
 zeromq_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
 endif
 
-all-local: datastructures.la
+all-local: zeromq.la
 	$(mkdir_p) $(top_srcdir)/$(BINARCHDIR)
 if SYS_IS_CYGWIN
 	cp .libs/zeromq.dll $(GAPINSTALLLIB)
