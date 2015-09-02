@@ -1,34 +1,34 @@
 #############################################################################
 ##  
-##  PackageInfo.g for the package `datastructures'               Markus Pfeiffer
+##  PackageInfo.g for the package `zeromq'                  Markus Pfeiffer
 ##                                                               
 ##  (created from the GAP example package, which is based on Frank L¸beck's
 ##   PackageInfo.g template file)
 ##  
 SetPackageInfo( rec(
 
-PackageName := "datastructures",
+PackageName := "zeromq",
 
 ##  This may be used by a default banner or on a Web page, should fit on
 ##  one line.
-Subtitle := "datastructures is a collection of standard data structures for the GAP programming language",
+Subtitle := "ZeroMQ bindings for GAP",
 
 Version := "0.0.0",
 ##
-Date := "31/12/2013",
+Date := "1/9/2015",
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.0.0">
-##  <!ENTITY RELEASEDATE "31 December 2013">
+##  <!ENTITY RELEASEDATE "1. September 2015">
 ##  <#/GAPDoc>
 
 PackageWWWHome :=
-  Concatenation( "http://www-groups.mcs.st-andrews.ac.uk/~markusp/",
+  Concatenation( "",
       LowercaseString( ~.PackageName ), "/" ),
 
-ArchiveURL := Concatenation( ~.PackageWWWHome, "datastructures-", ~.Version ),
+ArchiveURL := Concatenation( ~.PackageWWWHome, "zeromq-", ~.Version ),
 
 ArchiveFormats := ".tar.gz",
 
@@ -67,7 +67,7 @@ Persons := [
     FirstNames    := "Markus",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "markusp@mcs.st-andrews.ac.uk",
+    Email         := "markus.pfeiffer@st-andrews.ac.uk",
     WWWHome       := "http://www.morphism.de/~markusp",
     PostalAddress := Concatenation( [
                        "School of Computer Science\n",
@@ -78,21 +78,6 @@ Persons := [
     Place         := "St Andrews",
     Institution   := "University of St Andrews"
   ),
-  rec( LastName      := "Horn",
-       FirstNames    := "Max",
-       IsAuthor      := true,
-       IsMaintainer  := true,
-       Email         := "max.horn@math.uni-giessen.de",
-       WWWHome       := "http://www.quendi.de/math.php",
-       PostalAddress := Concatenation( "AG Algebra\n",
-                                       "Mathematisches Institut\n",
-                                       "Justus-Liebig-Universit‰t Gieﬂen\n",
-                                       "Arndtstraﬂe 2\n",
-                                       "35392 Gieﬂen\n",
-                                       "Germany" ),
-       Place         := "Gieﬂen, Germany",
-       Institution   := "Justus-Liebig-Universit‰t Gieﬂen"
-     )
 ],
 
 ##  Status information. Currently the following cases are recognized:
@@ -131,12 +116,12 @@ PackageInfoURL :=
 # computing the Smith normal form of integer matrices and some related \
 # utilities.",
 AbstractHTML := 
-  "The <span class=\"pkgname\">datastructures</span> package provides some \
+  "The <span class=\"pkgname\">zeromq</span> package provides some \
    standard data structures.",
 
 PackageDoc := rec(
   # use same as in GAP            
-  BookName  := "datastructures",
+  BookName  := "zeromq",
   # format/extension can be one of .tar.gz, .tar.bz2, -win.zip, .zoo.
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
@@ -145,7 +130,7 @@ PackageDoc := rec(
   SixFile   := "doc/manual.six",
   # a longer title of the book, this together with the book name should
   # fit on a single text line (appears with the '?books' command in GAP)
-  LongTitle := "datastructures - GAP Data Structures",
+  LongTitle := "zeromq - ZeroMQ bindings for GAP",
 ),
 
 
@@ -163,17 +148,17 @@ AvailabilityTest := ReturnTrue,
 
 BannerString := Concatenation( 
     "----------------------------------------------------------------\n",
-    "Loading datastructures ", ~.Version, "\n",
+    "Loading ZeroMQ ", ~.Version, "\n",
     "by ",
     JoinStringsWithSeparator( List( Filtered( ~.Persons, r -> r.IsAuthor ),
                                     r -> Concatenation(
         r.FirstNames, " ", r.LastName, " (", r.WWWHome, ")\n" ) ), "   " ),
-    "For help, type: ?datastructures package \n",
+    "For help, type: ?zeromq package \n",
     "----------------------------------------------------------------\n" ),
 
 TestFile := "tst/testall.tst",
 
-Keywords := ["data structures", "algorithms"]
+Keywords := ["zeromq"]
 
 ));
 
