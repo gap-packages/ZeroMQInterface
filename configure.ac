@@ -1,6 +1,6 @@
 AC_PREREQ(2.68)
 LT_PREREQ([2.4.2])
-AC_INIT([zeromq], m4_esyscmd([tr -d '\n' < VERSION]), [https://github.com/gap-system/zeromq/issues])
+AC_INIT([zeromq], m4_esyscmd([tr -d '\n' < VERSION]), [https://github.com/gap-packages/zeromq/issues])
 AC_CONFIG_SRCDIR([src/zmqgap.c])
 AC_CONFIG_HEADER([src/pkgconfig.h:cnf/pkgconfig.h.in])
 AC_CONFIG_MACRO_DIR([m4])
