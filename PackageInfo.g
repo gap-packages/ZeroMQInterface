@@ -36,7 +36,7 @@ Persons := [
     FirstNames := "Reimer",
     LastName := "Behrends",
     WWWHome := "http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/",
-    Email := "Reimer Behrends <behrends@gmail.com>",
+    Email := "behrends@gmail.com",
     PostalAddress := Concatenation(
                "Technische Universität Kaiserslautern\n",
                "Fachbereich Mathematik\n",
