@@ -15,7 +15,18 @@ if SYS_IS_CYGWIN
 zeromq_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
 endif
 
-all-local: zeromq.la
+zmq:
+	@( echo ""; \
+       echo "Building libzmq."; \
+       echo ""; 
+	   cd extern; \
+	   tar xzf zeromq-4.1.3.tar.gz; \
+	   cd zeromq-4.1.3; \
+	   ./configure ; \
+	   gmake ; \
+	) 
+
+all-local: zmq zeromq.la
 	$(mkdir_p) $(top_srcdir)/$(BINARCHDIR)
 if SYS_IS_CYGWIN
 	cp .libs/zeromq.dll $(GAPINSTALLLIB)
@@ -26,6 +37,7 @@ endif
 
 distclean-local:
 	rm -rf bin/*
+	rm -rf extern/*
 	(cd doc ; ./clean)
 
 doc:	doc/manual.six
