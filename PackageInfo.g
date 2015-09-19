@@ -1,100 +1,62 @@
-#############################################################################
-##
-##  PackageInfo.g for the package `zeromq'                  Markus Pfeiffer
-##
-##  (created from the GAP example package, which is based on Frank Lübeck's
-##   PackageInfo.g template file)
-##
+#
+# zeromq: ZeroMQ bindings for GAP and HPC-GAP
+#
+# This file contains package meta data. For additional information on
+# the meaning and correct usage of these fields, please consult the
+# manual of the "Example" package as well as the comments in its
+# PackageInfo.g file.
+#
 SetPackageInfo( rec(
 
 PackageName := "zeromq",
-
-##  This may be used by a default banner or on a Web page, should fit on
-##  one line.
-Subtitle := "ZeroMQ bindings for GAP",
-
-Version := "0.0.0",
-##
-Date := "1/9/2015",
-##  Optional: if the package manual uses GAPDoc, you may duplicate the
-##  version and the release date as shown below to read them while building
-##  the manual using GAPDoc facilities to distibute documents across files.
-##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.0.0">
-##  <!ENTITY RELEASEDATE "1. September 2015">
-##  <#/GAPDoc>
-
-PackageWWWHome :=
-  Concatenation( "",
-      LowercaseString( ~.PackageName ), "/" ),
-
-ArchiveURL := Concatenation( ~.PackageWWWHome, "zeromq-", ~.Version ),
-
-ArchiveFormats := ".tar.gz",
-
-##  If not all of the archive formats mentioned above are provided, these
-##  can be produced at the GAP side. Therefore it is necessary to know which
-##  files of the package distribution are text files which should be unpacked
-##  with operating system specific line breaks.
-##  The package wrapping tools for the GAP distribution and web pages will
-##  use a sensible list of file extensions to decide if a file
-##  is a text file (being conservative, it may miss a few text files).
-##  These rules may be optionally prepended by the application of rules
-##  from the PackageInfo.g file. For this, there are the following three
-##  mutually exclusive possibilities to specify the text files:
-##
-##    - specify below a component 'TextFiles' which is a list of names of the
-##      text files, relative to the package root directory (e.g., "lib/bla.g"),
-##      then all other files are taken as binary files.
-##    - specify below a component 'BinaryFiles' as list of names, then all other
-##      files are taken as text files.
-##    - specify below a component 'TextBinaryFilesPatterns' as a list of names
-##      and/or wildcards, prepended by 'T' for text files and by 'B' for binary
-##      files.
-##
-##  (Remark: Just providing a .tar.gz file will often result in useful
-##  archives)
-##
-##  These entries are *optional*.
-#TextFiles := ["init.g", ......],
-#BinaryFiles := ["doc/manual.dvi", ......],
-#TextBinaryFilesPatterns := [ "TGPLv3", "Texamples/*", "B*.in", ......],
-
+Subtitle := "ZeroMQ bindings for GAP and HPC-GAP",
+Version := "0.1",
+Date := "19/09/2015", # dd/mm/yyyy format
 
 Persons := [
   rec(
-    LastName      := "Pfeiffer",
-    FirstNames    := "Markus",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "markus.pfeiffer@st-andrews.ac.uk",
-    WWWHome       := "http://www.morphism.de/~markusp",
-    PostalAddress := Concatenation( [
-                       "School of Computer Science\n",
-                       "University of St Andrews\n",
-                       "Jack Cole Building, North Haugh\n",
-                       "St Andrews, Fife, KY16 9SX\n",
-                       "United Kingdom" ] ),
-    Place         := "St Andrews",
-    Institution   := "University of St Andrews"
+    IsAuthor := true,
+    IsMaintainer := true,
+    FirstNames := "Markus",
+    LastName := "Pfeiffer",
+    WWWHome := "http://www.morphism.de/~markusp/",
+    Email := "markus.pfeiffer@st-andrews.ac.uk",
+    PostalAddress := Concatenation(
+               "School of Computer Science\n",
+               "University of St Andrews\n",
+               "Jack Cole Building, North Haugh\n",
+               "St Andrews, Fife, KY16 9SX\n",
+               "United Kingdom" ),
+    Place := "St Andrews",
+    Institution := "University of St Andrews",
   ),
   rec(
-    LastName      := "Behrends",
-    FirstNames    := "Reimer",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    Email         := "Reimer Behrends <behrends@gmail.com>",
-    WWWHome       := "http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/",
-    PostalAddress := Concatenation( [
-                       "Technische Universität Kaiserslautern\n",
-                       "Fachbereich Mathematik\n",
-                       "Postfach 3049\n",
-                       "67653 Kaiserslautern\n",
-                       "Deutschland\n" ]),
-    Place         := "Kaiserslautern",
-    Institution   := "Universität Kaiserslautern"
+    IsAuthor := true,
+    IsMaintainer := false,
+    FirstNames := "Reimer",
+    LastName := "Behrends",
+    WWWHome := "http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/",
+    Email := "Reimer Behrends <behrends@gmail.com>",
+    PostalAddress := Concatenation(
+               "Technische UniversitÃ¤t Kaiserslautern\n",
+               "Fachbereich Mathematik\n",
+               "Postfach 3049\n",
+               "67653 Kaiserslautern\n",
+               "Deutschland" ),
+    Place := "Kaiserslautern",
+    Institution := "UniversitÃ¤t Kaiserslautern",
   ),
 ],
+
+PackageWWWHome := "http://gap-system.github.io/zeromq/",
+
+ArchiveURL     := Concatenation("https://github.com/gap-system/zeromq/",
+                                "releases/download/v", ~.Version,
+                                "/zeromq-", ~.Version),
+README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+
+ArchiveFormats := ".tar.gz",
 
 ##  Status information. Currently the following cases are recognized:
 ##    "accepted"      for successfully refereed packages
@@ -104,63 +66,31 @@ Persons := [
 ##    "dev"           for development versions of packages
 ##    "other"         for all other packages
 ##
-# Status := "accepted",
 Status := "dev",
 
-##  You must provide the next two entries if and only if the status is
-##  "accepted" because is was successfully refereed:
-# format: 'name (place)'
-# CommunicatedBy := "Mike Atkinson (St. Andrews)",
-#CommunicatedBy := "",
-# format: mm/yyyy
-# AcceptDate := "08/1999",
-#AcceptDate := "",
-
-README_URL :=
-  Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL :=
-  Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-
-##  Here you  must provide a short abstract explaining the package content
-##  in HTML format (used on the package overview Web page) and an URL
-##  for a Webpage with more detailed information about the package
-##  (not more than a few lines, less is ok):
-##  Please, use '<span class="pkgname">GAP</span>' and
-##  '<span class="pkgname">MyPKG</span>' for specifing package names.
-##
-# AbstractHTML := "This package provides a collection of functions for \
-# computing the Smith normal form of integer matrices and some related \
-# utilities.",
-AbstractHTML :=
-  "The <span class=\"pkgname\">zeromq</span> package provides some \
-   standard data structures.",
+AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  # use same as in GAP
   BookName  := "zeromq",
-  # format/extension can be one of .tar.gz, .tar.bz2, -win.zip, .zoo.
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
-  # the path to the .six file used by GAP's help system
   SixFile   := "doc/manual.six",
-  # a longer title of the book, this together with the book name should
-  # fit on a single text line (appears with the '?books' command in GAP)
-  LongTitle := "zeromq - ZeroMQ bindings for GAP",
+  LongTitle := "ZeroMQ bindings for GAP and HPC-GAP",
 ),
 
-
-##  Are there restrictions on the operating system for this package? Or does
-##  the package need other packages to be available?
 Dependencies := rec(
-  GAP := "4.5.3",
-  NeededOtherPackages := [["GAPDoc", "1.5"]],
-  SuggestedOtherPackages := [],
-  # OtherPackagesLoadedInAdvance := [],
-  ExternalConditions := []
+  GAP := ">= 4.6",
+  NeededOtherPackages := [ [ "GAPDoc", ">= 1.5" ] ],
+  SuggestedOtherPackages := [ ],
+  ExternalConditions := [ ],
 ),
 
-AvailabilityTest := ReturnTrue,
+AvailabilityTest := function()
+        return true;
+    end,
+
+TestFile := "tst/testall.g",
 
 BannerString := Concatenation(
     "----------------------------------------------------------------\n",
@@ -172,8 +102,8 @@ BannerString := Concatenation(
     "For help, type: ?zeromq package \n",
     "----------------------------------------------------------------\n" ),
 
-TestFile := "tst/testall.tst",
-
-Keywords := ["zeromq"]
+Keywords := [ "zeromq" ],
 
 ));
+
+
