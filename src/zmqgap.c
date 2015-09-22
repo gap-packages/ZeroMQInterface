@@ -670,12 +670,10 @@ static StructInitInfo module = {
 
 StructInitInfo *InitInfoZmq ( void )
 {
-  FillInVersion( &module );
   return &module;
 }
 
 StructInitInfo * Init__Dynamic ( void )
 {
-  FillInVersion( &module );
   return &module;
 }
