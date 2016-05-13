@@ -14,9 +14,6 @@ AM_PROG_AR
 
 LT_INIT([disable-static dlopen win32-dll])
 
-## Find out what the best compiler flags are
-AX_CC_MAXOPT
-
 AC_FIND_GAP
 
 AC_CHECK_SIZEOF([void **])
