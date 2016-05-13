@@ -10,7 +10,7 @@ fi;
 AutoDoc(rec( 
     autodoc := true,
     scaffold := rec(
-        includes := [ "zmq.xml" ]
+        includes := [ "zmq.xml", "zgap.xml" ]
     )
 ));
 
