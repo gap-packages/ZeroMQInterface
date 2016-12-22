@@ -101,16 +101,6 @@ AvailabilityTest := function()
 
 TestFile := "tst/testall.g",
 
-BannerString := Concatenation(
-    "----------------------------------------------------------------\n",
-    "Loading ZeroMQ ", ~.Version, "\n",
-    "by ",
-    JoinStringsWithSeparator( List( Filtered( ~.Persons, r -> r.IsAuthor ),
-                                    r -> Concatenation(
-        r.FirstNames, " ", r.LastName, " (", r.WWWHome, ")\n" ) ), "   " ),
-    "For help, type: ?zeromq package \n",
-    "----------------------------------------------------------------\n" ),
-
 Keywords := [ "zeromq" ],
 
 ));
