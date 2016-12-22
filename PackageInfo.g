@@ -91,6 +91,11 @@ Dependencies := rec(
 ),
 
 AvailabilityTest := function()
+        if not "zeromq" in SHOW_STAT() and
+           Filename(DirectoriesPackagePrograms("zeromq"), "zeromq.so") = fail then
+          #Info(InfoWarning, 1, "zeromq: kernel zeromq functions not available.");
+          return fail;
+        fi;
         return true;
     end,
 
