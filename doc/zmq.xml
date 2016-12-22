@@ -1,8 +1,8 @@
 <Chapter Label="ZeroMQ Bindings">
   <Heading>ZeroMQ Bindings</Heading>
 
-There are experimental bindings to the ZeroMQ library available (http://www.zeromq.net/). This section describes these
-bindings. You need to build HPC-GAP with &quot;make ZMQ=yes&quot; to activate them.
+There are experimental bindings to the ZeroMQ library available <URL>http://www.zeromq.net/</URL>. This section describes these
+bindings.
 
 Messages in ZeroMQ are sent between endpoints called <E>sockets</E>. Each socket can be <E>bound</E> to an address
 specified by a URI and other sockets can <E>connect</E> to the same address to exchange messages with that socket.

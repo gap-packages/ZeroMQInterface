@@ -1,5 +1,5 @@
 #
-# zeromq: ZeroMQ bindings for GAP and HPC-GAP
+# zeromq: ZeroMQ bindings for GAP
 #
 # This file runs package tests. It is also referenced in the package
 # metadata in PackageInfo.g.

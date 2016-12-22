@@ -1,5 +1,5 @@
 #
-# zeromq: ZeroMQ bindings for GAP and HPC-GAP
+# zeromq: ZeroMQ bindings for GAP
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -9,7 +9,7 @@
 SetPackageInfo( rec(
 
 PackageName := "zeromq",
-Subtitle := "ZeroMQ bindings for GAP and HPC-GAP",
+Subtitle := "ZeroMQ bindings for GAP",
 Version := "0.1",
 Date := "19/09/2015", # dd/mm/yyyy format
 
@@ -80,7 +80,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "ZeroMQ bindings for GAP and HPC-GAP",
+  LongTitle := "ZeroMQ bindings for GAP",
 ),
 
 Dependencies := rec(

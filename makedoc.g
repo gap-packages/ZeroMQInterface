@@ -1,5 +1,5 @@
 #
-# zeromq: ZeroMQ bindings for GAP and HPC-GAP
+# zeromq: ZeroMQ bindings for GAP
 #
 # This file is a script which compiles the package manual.
 #
