@@ -65,146 +65,166 @@ socket.
 For a precise description of the behavior of each socket type, please consult the original ZeroMQ documentation for
 <C>zmq_socket()</C>.
 
-    <Subsection Label="ZmqPushSocket">
-      <Heading>ZmqPushSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqPushSocket" Arg="[uri, [identity]]"/>
+<Description>
 A push socket is one end of a unidirectional pipe. Programs can send messages to it, which will be delivered to a
 matched pull socket at the other end.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqPullSocket">
-      <Heading>ZmqPullSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqPullSocket" Arg="[uri, [identity]]"/>
+<Description>
 A pull socket is the other end of a unidirectional pipe.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqReplySocket">
-      <Heading>ZmqReplySocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqReplySocket" Arg="[uri, [identity]]"/>
+<Description>
 A reply socket provides the server side of a remote-procedure call interaction. It alternates between receiving a
 message and sending a message to the socket from which the previous one originated.
 
 Deviating from that protocol (for example, by sending two messages in succession or receiving two without responding to
 the first) will result in an error.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqRequestSocket">
-      <Heading>ZmqRequestSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqRequestSocket" Arg="[uri, [identity]]"/>
+<Description>
 A request socket provides the client side of a remote-procedure call interaction. It will alternate between sending a
 message to a connected reply socket and receiving the response.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqPublisherSocket">
-      <Heading>ZmqPublisherSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqPublisherSocket" Arg="[uri, [identity]]"/>
+<Description>
 A publisher socket is a unidirectional broadcast facility. It will send each outgoing message to all connected
 subscriber sockets.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqSubscriberSocket">
-      <Heading>ZmqSubscriberSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqSubscriberSocket" Arg="[uri, [identity]]"/>
+<Description>
 A subscriber socket receives messages from a publisher socket. It can subscribe to only a specific subseet of messages
 (see the <Ref Func="ZmqSubscribe"/> function) or receive all of them.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqDealerSocket">
-      <Heading>ZmqDealerSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqDealerSocket" Arg="[uri, [identity]]"/>
+<Description>
 A dealer socket is a bidirectional socket. One or more peers can connect to it. Outgoing messages will be sent to those
 peers in a round-robin fashion (i.e., the first message goes to the first peer, the second to the second peer, and so
 forth until all peers have received a message and the process begins anew with the first peer). Incoming messages will
 be received from all peers and processed fairly (i.e., no message will be held indefinitely).
 
 Two dealer sockets can be used to create a bidirectional pipe.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqRouterSocket">
-      <Heading>ZmqRouterSocket([uri, [identity]])</Heading>
-
+<ManSection>
+<Func Name="ZmqRouterSocket" Arg="[uri, [identity]]"/>
+<Description>
 Router sockets, like dealer sockets, can have multiple peers connected to them. Incoming messages are handled the same
 way as for dealer sockets. Outgoing messages should be multi-part messages, where the first part of the message is the
 identity of one of the peers. The message will then be sent only to the peer with that identity.
 
 Peers can be dealer, request, or reply sockets.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqSocket">
-      <Heading>ZmqSocket(type)</Heading>
-
+<ManSection>
+<Func Name="ZmqSocket" Arg="type"/>
+<Description>
 <C>ZmqSocket</C> is a low-level function that is used by <C>ZmqPushSocket</C> etc. to create sockets. Its argument is a
 string, one of &quot;PUSH&quot;, &quot;PULL&quot;, &quot;REP&quot;, &quot;REQ&quot;, &quot;PUB&quot;, &quot;SUB&quot;,
 DEALER&quot;, &quot;ROUTER&quot;, and it creates and returns a socket of that type.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqClose">
-      <Heading>ZmqClose(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqClose" Arg="socket"/>
+<Description>
 <C>ZmqClose</C> closes <C>socket</C>. Afterwards, it cannot anymore be bound or connected to, nor receive or send
 messages. Messages already in transit will still be delivered.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqIsOpen">
-      <Heading>ZmqIsOpen(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqIsOpen" Arg="socket"/>
+<Description>
 <C>ZmqIsOpen</C> returns true if <C>socket</C> has not been closed yet, false otherwise.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqSocketType">
-      <Heading>ZmqSocketType(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqSocketType" Arg="socket"/>
+<Description>
 <C>ZmqSocketType</C> returns the string with which the socket was created (see <Ref Func="ZmqSocket"/>).
-    </Subsection>
+</Description>
+</ManSection>
+
   </Section>
   <Section Label="Binding and connecting sockets to addresses">
     <Heading>Binding and connecting sockets to addresses</Heading>
 
-    <Subsection Label="ZmqBind">
-      <Heading>ZmqBind(socket, uri)</Heading>
-
+<ManSection>
+<Func Name="ZmqBind" Arg="socket, uri"/>
+<Description>
 <C>ZmqBind</C> will <E>bind</E> <C>socket</C> to <C>uri</C>. After being bound to the address specified by <C>uri</C>,
 the socket can be connected to at that address with <Ref Func="ZmqConnect"/>.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqConnect">
-      <Heading>ZmqConnect(socket, uri)</Heading>
-
+<ManSection>
+<Func Name="ZmqConnect" Arg="socket, uri"/>
+<Description>
 <C>ZmqConnect</C> is used to connect <C>socket</C> to another socket that has been bound to <C>uri</C>. Note that you
 can connect to an address that has not been bound yet; in that case, the connection will be delayed until the binding
 has occurred.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqAttach">
-      <Heading>ZmqAttach(socket, uri)</Heading>
-
+<ManSection>
+<Func Name="ZmqAttach" Arg="socket, uri"/>
+<Description>
 <C>ZmqAttach</C> is a unified interface for binding and connecting a socket. If <C>uri</C> begins with a &quot;+&quot;
 character, then the <Ref Func="ZmqConnect"/> is called with the socket and the rest of the <C>uri</C> string following
 the &quot;+&quot;. Otherwise, <Ref Func="ZmqBind"/> is called with these arguments.
 
 The intended use is to construct a network of connections from a list of strings.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqSocketURI">
-      <Heading>ZmqSocketURI(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqSocketURI" Arg="socket"/>
+<Description>
 <C>ZmqSocketURI</C> returns the most recent URI to which <C>socket</C> has been bound or connected. Sockets can be bound
 to or connected to multiple addresses, but only the most recent one is returned.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqIsBound">
-      <Heading>ZmqIsBound(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqIsBound" Arg="socket"/>
+<Description>
 <C>ZmqIsBound</C> returns true if the socket has been bound to the address returned by <C>ZmqSocketURI()</C>, false
 otherwise.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZmqIsConnected">
-      <Heading>ZmqIsConnected(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqIsConnected" Arg="socket"/>
+<Description>
 <C>ZmqIsBound</C> returns true if the socket has been connected to the address returned by <C>ZmqSocketURI()</C>, false
 otherwise.
-    </Subsection>
+</Description>
+</ManSection>
+
   </Section>
   <Section Label="Sending and receiving messages">
     <Heading>Sending and receiving messages</Heading>

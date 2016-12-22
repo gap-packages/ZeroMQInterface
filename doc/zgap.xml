@@ -59,37 +59,40 @@ worker processes; 0 specifies the master process. Multiple processes can be spec
 The variable <C>ZAll</C> contains a range encompassing the worker processes; <C>ZSelf</C> contains the index of the
 current worker or 0 for the master.
 
-    <Subsection Label="ZExec">
-      <Heading>ZExec(dest, cmd)</Heading>
-
+<ManSection>
+<Func Name="ZExec" Arg="dest, cmd"/>
+<Description>
 This function sends <C>cmd</C> to the given destination and executes it there. The command must be a valid GAP statement
 ending in a semicolon. If <C>dest</C> specifies multiple processes, the command will be executed on all of them.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZBind">
-      <Heading>ZBind(dest, var, expr)</Heading>
-
+<ManSection>
+<Func Name="ZBind" Arg="dest, var, expr"/>
+<Description>
 This function binds the global variable described by the string <C>var</C> to the value <C>expr</C> in all processes
 listed in <C>dest</C>. Note that <C>expr</C> must evaluate to a serializable value.
 
 <Example><![CDATA[
 gap> ZBind(ZAll, "counter", 0);
 ]]></Example>
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZUnbind">
-      <Heading>ZUnbind(dest, var)</Heading>
-
+<ManSection>
+<Func Name="ZUnbind" Arg="dest, var"/>
+<Description>
 This function is the counterpart to <C>ZBind</C>. It will unbind <C>var</C> in all specified processes.
 
 <Example><![CDATA[
 gap> ZUnbind(ZAll, "status");
 ]]></Example>
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZCall">
-      <Heading>ZCall(dest, func, args)</Heading>
-
+<ManSection>
+<Func Name="ZCall" Arg="dest, func, args"/>
+<Description>
 This function will execute the function specified by the string <C>func</C> in the specified processes. The string
 <C>func</C> must be the name of a global variable referring to the function to be executed. This function should be
 created at startup by adding a file to the commandline that defines it in all workers or by <C>ZExec</C>.
@@ -99,11 +102,12 @@ gap> ZBind(ZAll, "counter", 0);
 gap> ZExec(Zall, "add := function(n) counter := counter + n; end;");
 gap> ZCall(1, "add", [1]);
 ]]></Example>
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZQuery">
-      <Heading>ZQuery(dest, func, args, callback)</Heading>
-
+<ManSection>
+<Func Name="ZQuery" Arg="dest, func, args, callback"/>
+<Description>
 This function works like <C>ZCall</C>, except that any return value will be passed to the callback function.
 
 <Example><![CDATA[
@@ -113,11 +117,12 @@ gap> ZQuery(1, "ReturnTrue", [], function(x) res := x; end);
 gap> res;
 true
 ]]></Example>
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZResponse">
-      <Heading>ZResponse()</Heading>
-
+<ManSection>
+<Func Name="ZResponse" Arg=""/>
+<Description>
 <C>ZResponse</C> is a convenience function to construct blocking callbacks for <C>ZCall</C> and <C>ZTask</C>. It returns
 a record containing a <C>put</C>, a <C>get</C>, and a <C>test</C> function. Here, <C>put</C> is passed as the callback;
 <C>get</C> can be used to read the returned value; and <C>test</C> can be used to test for the presence of a value.
@@ -130,32 +135,37 @@ Z(2^2)
 gap> resp.test();
 true
 ]]></Example>
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZTask">
-      <Heading>ZTask(dest, func, args, callback)</Heading>
-
+<ManSection>
+<Func Name="ZTask" Arg="dest, func, args, callback"/>
+<Description>
 This function works like <C>ZQuery</C>, except that the function will be executed via a task and <C>callback</C> will be
 called after the task finishes and returns a result.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZAsync">
-      <Heading>ZAsync(dest, func, args)</Heading>
-
+<ManSection>
+<Func Name="ZAsync" Arg="dest, func, args"/>
+<Description>
 This function works like <C>ZCall</C>, except that the function will be executed via a task.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZRead">
-      <Heading>ZRead(dest, file)</Heading>
-
+<ManSection>
+<Func Name="ZRead" Arg="dest, file"/>
+<Description>
 This function does a <C>Read(file)</C> for all specified processes.
+</Description>
+</ManSection>
 
-    </Subsection>
-    <Subsection Label="ZReadGapRoot">
-      <Heading>ZReadGapRoot(dest, file)</Heading>
-
+<ManSection>
+<Func Name="ZReadGapRoot" Arg="dest, file"/>
+<Description>
 This function does a <C>ReadGapRoot(file)</C> for all specified processes.
+</Description>
+</ManSection>
 
-    </Subsection>
   </Section>
 </Chapter>
