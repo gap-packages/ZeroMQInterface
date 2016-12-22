@@ -1,5 +1,5 @@
 <Chapter Label="ZeroMQ Bindings">
-  <Heading>ZeroMQ Bindings</Heading>
+<Heading>ZeroMQ Bindings</Heading>
 
 There are experimental bindings to the ZeroMQ library available <URL>http://www.zeromq.net/</URL>. This section describes these
 bindings.
@@ -7,13 +7,13 @@ bindings.
 Messages in ZeroMQ are sent between endpoints called <E>sockets</E>. Each socket can be <E>bound</E> to an address
 specified by a URI and other sockets can <E>connect</E> to the same address to exchange messages with that socket.
 
-  <Section Label="Addresses, transports, and URIs">
-    <Heading>Addresses, transports, and URIs</Heading>
+<Section Label="Addresses, transports, and URIs">
+<Heading>Addresses, transports, and URIs</Heading>
 
 Addresses are specified as URIs of one of four different types (TCP, IPC, in-process, PGM/EPGM), each for a different
 type of transport.
 
-  <Subsection Label="The TCP transport"><Heading>The TCP transport</Heading>
+<Subsection Label="The TCP transport"><Heading>The TCP transport</Heading>
 
 TCP URIs map to POSIX TCP stream sockets. The URI is of the form <C>tcp://&lt;address&gt;:&lt;port&gt;</C> or
 <C>tcp://*:&lt;port&gt;</C>. Here, <C>address</C> is an internet address, either an IP address or a symbolic
@@ -22,9 +22,9 @@ indefinite amount of time or even fail). Port is a TCP port number. If a <Q>*</Q
 this describes the so-called unspecified address; the URI can only be used for binding and will then accept incoming
 connections from all interfaces (as in binding to <Q>0.0.0.0</Q> in IPv4 or <Q>::</Q> in IPv6).
 
-  </Subsection>
-  <Subsection Label="The IPC transport">
-    <Heading>The IPC transport</Heading>
+</Subsection>
+<Subsection Label="The IPC transport">
+<Heading>The IPC transport</Heading>
 
 The URI for IPC communication is of the form <C>ipc://&lt;path&gt;</C>, where <C>path</C> is an actual path on
 the file system. Binding to such a URI will create a file in that location.
@@ -34,18 +34,19 @@ gap> socket := ZmqDealerSocket();;
 gap> ZmqBind(socket, "ipc:///tmp/connector");
 ]]></Example>
 
-  </Subsection>
-  <Subsection Label="The in-process transport">
-    <Heading>The in-process transport</Heading>
+</Subsection>
+<Subsection Label="The in-process transport">
+<Heading>The in-process transport</Heading>
 
 The in-process transport is used to communicate between threads in order to avoid the overhead of operating system
 calls. Messages are simply being copied from one thread's memory to the other's.
 
 In-process URIs are of the form <C>inproc://&lt;string&gt;</C>, where <C>string</C> is an arbitrary string.
-  </Subsection>
-  </Section>
-  <Section Label="Creating and closing sockets">
-    <Heading>Creating and closing sockets</Heading>
+</Subsection>
+</Section>
+
+<Section Label="Creating and closing sockets">
+<Heading>Creating and closing sockets</Heading>
 
 Sockets are generally being created via calls to <Ref Func="ZmqPushSocket"/>, etc. Each such call takes two optional
 arguments, a URI and an identity.
@@ -169,9 +170,10 @@ messages. Messages already in transit will still be delivered.
 </Description>
 </ManSection>
 
-  </Section>
-  <Section Label="Binding and connecting sockets to addresses">
-    <Heading>Binding and connecting sockets to addresses</Heading>
+</Section>
+
+<Section Label="Binding and connecting sockets to addresses">
+<Heading>Binding and connecting sockets to addresses</Heading>
 
 <ManSection>
 <Func Name="ZmqBind" Arg="socket, uri"/>
@@ -225,9 +227,10 @@ otherwise.
 </Description>
 </ManSection>
 
-  </Section>
-  <Section Label="Sending and receiving messages">
-    <Heading>Sending and receiving messages</Heading>
+</Section>
+
+<Section Label="Sending and receiving messages">
+<Heading>Sending and receiving messages</Heading>
 
 ZeroMQ allows the sending and receiving of both string messages and multi-part messages. String messages are sequences
 of bytes (which can include zero), provided as a GAP string, while multi-part messages are lists of strings, provided as
@@ -236,16 +239,17 @@ the inconvenience of having to encode those in a single string). When sent, mult
 their entirety; they can be retrieved one part at a time, but if the first part is available, the last part is available
 also.
 
-  <Subsection Label="ZmqSend">
-    <Heading>ZmqSend(socket, data)</Heading>
-
+<ManSection>
+<Func Name="ZmqSend" Arg="socket, data"/>
+<Description>
 <C>ZmqSend</C> will send <C>data</C> to <C>socket</C>, according to the routing behavior of the underlying socket
 mechanism.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqReceive">
-    <Heading>ZmqReceive(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqReceive" Arg="socket"/>
+<Description>
 <C>ZmqReceive</C> will either retrieve a string message or a single part of a multi-part message from <C>socket</C> and
 return the result as a GAP string.
 
@@ -261,11 +265,12 @@ gap> ZmqReceive(z2);
 gap> ZmqReceive(z2);
 "beta"
 ]]></Example>
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqReceiveList">
-    <Heading>ZmqReceiveList(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqReceiveList" Arg="socket"/>
+<Description>
 <C>ZmqReceiveList</C> will retrieve a message in its entirety from <C>socket</C> and return the result as a list of
 strings.
 
@@ -279,11 +284,12 @@ gap> ZmqSend(z, ["alpha", "beta"]);
 gap> ZmqReceiveList(z2);
 [ "alpha", "beta" ]
 ]]></Example>
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqReceiveListAsString">
-    <Heading>ZmqReceiveListAsString(socket, separator)</Heading>
-
+<ManSection>
+<Func Name="ZmqReceiveListAsString" Arg="socket, separator"/>
+<Description>
 <C>ZmqReceiveListAsString</C> works like <C>ZmqReceiveList</C>, but will return the result a single string, with
 multiple parts separated by <C>separator</C>.
 
@@ -297,11 +303,12 @@ gap> ZmqSend(z, ["alpha", "beta"]);
 gap> ZmqReceiveListAsString(z2, "::");
 "alpha::beta"
 ]]></Example>
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqHasMore">
-    <Heading>ZmqHasMore(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqHasMore" Arg="socket"/>
+<Description>
 <C>ZmqHasMore</C> will return <C>true</C> if a socket has one or more remaining parts of a multi-part message
 outstanding, <C>false</C> otherwise.
 
@@ -323,11 +330,12 @@ gap> ZmqReceive(z2);
 gap> ZmqHasMore(z2);
 false
 ]]></Example>
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqPoll">
-    <Heading>ZmqPoll(inputs, outputs, timeout)</Heading>
-
+<ManSection>
+<Func Name="ZmqPoll" Arg="inputs, outputs, timeout"/>
+<Description>
 <C>ZmqPoll</C> is a facility to determine if messages can be received from one of the sockets listed in <C>inputs</C> or
 sent to one of the sockets listed in <C>outputs</C>. It returns a list of indices describing the sockets that at least
 one message can be received from or sent to. The timeout is an integer. If positive, it describes a duration (in
@@ -364,96 +372,111 @@ that can be received. Conversely, <C>send1</C> can still accept outgoing message
 
 Thus, the result is the list <C>[2, 3]</C>. The <C>2</C> refers to <C>recv2</C> (as the second socket in the list of
 inputs), while <C>3</C> refers to <C>send1</C> (as the first socket in the list of outputs).
-    </Subsection>
-  </Section>
-  <Section Label="Setting and querying socket properties">
-    <Heading>Setting and querying socket properties</Heading>
+</Description>
+</ManSection>
+
+</Section>
+
+<Section Label="Setting and querying socket properties">
+<Heading>Setting and querying socket properties</Heading>
 
 Sockets have properties that can be set and queried. Most such properties only affect binds and connects that occur
 after they have been set. Binding or connecting a socket first and then setting a property will not change the behavior
 of the socket.
 
-  <Subsection Label="ZmqSetIdentity">
-    <Heading>ZmqSetIdentity(socket, string)</Heading>
-
+<ManSection>
+<Func Name="ZmqSetIdentity" Arg="socket, string"/>
+<Description>
 <C>ZmqSetIdentity</C> can be used to give the socket an identity. An identity is a string of up to 255 characters that
 should not start with a null character (the null character is reserved for internal use).
 
 This identity should be globally unique. Uniqueness is not enforced, however, and undefined behavior may result from
 different sockets with the same identity interacting.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqGetIdentity">
-    <Heading>ZmqGetIdentity(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqGetIdentity" Arg="socket"/>
+<Description>
 <C>ZmqGetIdentity</C> returns the current identity of the socket.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqSetSendCapacity">
-    <Heading>ZmqSetSendCapacity(socket, value)</Heading>
-
+<ManSection>
+<Func Name="ZmqSetSendCapacity" Arg="socket, value"/>
+<Description>
 <C>ZmqSetSendCapacity</C> sets the maximum number of messages that a socket can store in its outgoing buffer.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqSetReceiveCapacity">
-    <Heading>ZmqSetReceiveCapacity(socket, value)</Heading>
-
+<ManSection>
+<Func Name="ZmqSetReceiveCapacity" Arg="socket, value"/>
+<Description>
 <C>ZmqSetReceiveCapacity</C> sets the maximum number of messages that a socket can store in its outgoing buffer.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqGetSendCapacity">
-    <Heading>ZmqGetSendCapacity(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqGetSendCapacity" Arg="socket"/>
+<Description>
 <C>ZmqGetSendCapacity</C> returns the maximum number of messages that a socket can store in its outgoing buffer.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqGetReceiveCapacity">
-    <Heading>ZmqGetReceiveCapacity(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqGetReceiveCapacity" Arg="socket"/>
+<Description>
 <C>ZmqGetReceiveCapacity</C> returns the maximum number of messages that a socket can store in its incoming buffer.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqSetSendBufferSize">
-    <Heading>ZmqSetSendBufferSize(socket, size)</Heading>
-
+<ManSection>
+<Func Name="ZmqSetSendBufferSize" Arg="socket, size"/>
+<Description>
 <C>ZmqSetSendBufferSize</C> sets the size of the transmission buffer used by the underlying operating system structure
 for sending data.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqGetSendBufferSize">
-    <Heading>ZmqGetSendBufferSize(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqGetSendBufferSize" Arg="socket"/>
+<Description>
 <C>ZmqGetSendBufferSize</C> returns the size of the transmission buffer used by the underlying operating system
 structure for sending data.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqSetReceiveBufferSize">
-    <Heading>ZmqSetReceiveBufferSize(socket, size)</Heading>
-
+<ManSection>
+<Func Name="ZmqSetReceiveBufferSize" Arg="socket, size"/>
+<Description>
 <C>ZmqSetReceiveBufferSize</C> sets the size of the transmission buffer used by the underlying operating system
 structure for receiving data.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqGetReceiveBufferSize">
-    <Heading>ZmqGetReceiveBufferSize(socket)</Heading>
-
+<ManSection>
+<Func Name="ZmqGetReceiveBufferSize" Arg="socket"/>
+<Description>
 <C>ZmqGetReceiveBufferSize</C> returns the size of the transmission buffer used by the underlying operating system
 structure for receiving data.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqSubscribe">
-    <Heading>ZmqSubscribe(socket, prefix)</Heading>
-
+<ManSection>
+<Func Name="ZmqSubscribe" Arg="socket, prefix"/>
+<Description>
 The <C>ZmqSubscribe</C> function can only be used for Subscriber sockets. After calling it, only messages that begin
 with the given prefix string will be received by the subscriber. All others will be silently discarded. The function can
 be used multiple times, and then all messages that match any of the prefixes will be received.
+</Description>
+</ManSection>
 
-  </Subsection>
-  <Subsection Label="ZmqUnsubscribe">
-    <Heading>ZmqUnsubscribe(socket, prefix)</Heading>
-
+<ManSection>
+<Func Name="ZmqUnsubscribe" Arg="socket, prefix"/>
+<Description>
 The <C>ZmqUnsubscribe</C> function removes the given prefix string from the socket's subscription list.
+</Description>
+</ManSection>
 
-  </Subsection>
-  </Section>
+</Section>
 </Chapter>
