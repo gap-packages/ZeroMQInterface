@@ -15,18 +15,18 @@ type of transport.
 
   <Subsection Label="The TCP transport"><Heading>The TCP transport</Heading>
 
-TCP URIs map to POSIX TCP stream sockets. The URI is of the form <C>tcp://&lt;address&gt;:&lt;port&gt;&quot;</C> or
-<C>&quot;tcp://*:&lt;port&gt;&quot;</C>. Here, <C>address</C> is an internet address, either an IP address or a symbolic
+TCP URIs map to POSIX TCP stream sockets. The URI is of the form <C>tcp://&lt;address&gt;:&lt;port&gt;</C> or
+<C>tcp://*:&lt;port&gt;</C>. Here, <C>address</C> is an internet address, either an IP address or a symbolic
 address (note that to resolve symbolic addresses, the library may have to consult DNS servers, which can take an
-indefinite amount of time or even fail). Port is a TCP port number. If a &quot;*&quot; is given instead of an address,
+indefinite amount of time or even fail). Port is a TCP port number. If a <Q>*</Q> is given instead of an address,
 this describes the so-called unspecified address; the URI can only be used for binding and will then accept incoming
-connections from all interfaces (as in binding to &quot;0.0.0.0&quot; in IPv4 or &quot;::&quot; in IPv6).
+connections from all interfaces (as in binding to <Q>0.0.0.0</Q> in IPv4 or <Q>::</Q> in IPv6).
 
   </Subsection>
   <Subsection Label="The IPC transport">
     <Heading>The IPC transport</Heading>
 
-The URI for IPC communication is of the form <C>ipc://&lt;path&gt;&quot;</C>, where <C>path</C> is an actual path on
+The URI for IPC communication is of the form <C>ipc://&lt;path&gt;</C>, where <C>path</C> is an actual path on
 the file system. Binding to such a URI will create a file in that location.
 
 <Example><![CDATA[
@@ -39,9 +39,9 @@ gap> ZmqBind(socket, "ipc:///tmp/connector");
     <Heading>The in-process transport</Heading>
 
 The in-process transport is used to communicate between threads in order to avoid the overhead of operating system
-calls. Messages are simply being copied from one thread&#39;s memory to the other&#39;s.
+calls. Messages are simply being copied from one thread's memory to the other's.
 
-In-process URIs are of the form &quot;inproc://&lt;string&gt;&quot;, where <C>string</C> is an arbitrary string.
+In-process URIs are of the form <C>inproc://&lt;string&gt;</C>, where <C>string</C> is an arbitrary string.
   </Subsection>
   </Section>
   <Section Label="Creating and closing sockets">
@@ -51,8 +51,8 @@ Sockets are generally being created via calls to <Ref Func="ZmqPushSocket"/>, et
 arguments, a URI and an identity.
 
 If a URI is given, a call to <Ref Func="ZmqAttach"/> will be performed immediately with the socket and URI. In
-particular, if the URI is prefixed with a &quot;+&quot; character, then the socket will connect to the address specified
-by the part after the &quot;+ character; otherwise, it will be bound to the URI.
+particular, if the URI is prefixed with a <Q>+</Q> character, then the socket will connect to the address specified
+by the part after the <Q>+</Q> character; otherwise, it will be bound to the URI.
 
 <Example><![CDATA[
 gap> z := ZmqPushSocket("inproc://test");  # binds to inproc://test
@@ -142,8 +142,8 @@ Peers can be dealer, request, or reply sockets.
 <Func Name="ZmqSocket" Arg="type"/>
 <Description>
 <C>ZmqSocket</C> is a low-level function that is used by <C>ZmqPushSocket</C> etc. to create sockets. Its argument is a
-string, one of &quot;PUSH&quot;, &quot;PULL&quot;, &quot;REP&quot;, &quot;REQ&quot;, &quot;PUB&quot;, &quot;SUB&quot;,
-DEALER&quot;, &quot;ROUTER&quot;, and it creates and returns a socket of that type.
+string, one of <Q>PUSH</Q>, <Q>PULL</Q>, <Q>REP</Q>, <Q>REQ</Q>, <Q>PUB</Q>, <Q>SUB</Q>,
+<Q>DEALER</Q>, <Q>ROUTER</Q>, and it creates and returns a socket of that type.
 </Description>
 </ManSection>
 
@@ -193,9 +193,9 @@ has occurred.
 <ManSection>
 <Func Name="ZmqAttach" Arg="socket, uri"/>
 <Description>
-<C>ZmqAttach</C> is a unified interface for binding and connecting a socket. If <C>uri</C> begins with a &quot;+&quot;
+<C>ZmqAttach</C> is a unified interface for binding and connecting a socket. If <C>uri</C> begins with a <Q>+</Q>
 character, then the <Ref Func="ZmqConnect"/> is called with the socket and the rest of the <C>uri</C> string following
-the &quot;+&quot;. Otherwise, <Ref Func="ZmqBind"/> is called with these arguments.
+the <Q>+</Q>. Otherwise, <Ref Func="ZmqBind"/> is called with these arguments.
 
 The intended use is to construct a network of connections from a list of strings.
 </Description>
@@ -452,7 +452,7 @@ be used multiple times, and then all messages that match any of the prefixes wil
   <Subsection Label="ZmqUnsubscribe">
     <Heading>ZmqUnsubscribe(socket, prefix)</Heading>
 
-The <C>ZmqUnsubscribe</C> function removes the given prefix string from the socket&#39;s subscription list.
+The <C>ZmqUnsubscribe</C> function removes the given prefix string from the socket's subscription list.
 
   </Subsection>
   </Section>
