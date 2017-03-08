@@ -48,7 +48,7 @@ Persons := [
   ),
 ],
 
-PackageWWWHome := "http://gap-packages.github.io/zeromq/",
+PackageWWWHome := "https://gap-packages.github.io/zeromq/",
 
 ArchiveURL     := Concatenation("https://github.com/gap-packages/zeromq/",
                                 "releases/download/v", ~.Version,
