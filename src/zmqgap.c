@@ -578,38 +578,35 @@ static Obj FuncZmqPoll(Obj self, Obj in, Obj out, Obj timeout) {
 
 
 
-#define FUNC_DEF(name, narg, argdesc) \
-  { #name, narg, argdesc, Func ## name, __FILE__ ":Func" #name }
-
 static StructGVarFunc GVarFuncs [] = {
-  FUNC_DEF(ZmqSocket, 1, "string describing socket type"),
-  FUNC_DEF(ZmqBind, 2, "zmq socket, local address"),
-  FUNC_DEF(ZmqConnect, 2, "zmq socket, remote address"),
-  FUNC_DEF(ZmqSend, 2, "zmq socket, string|list of strings"),
-  FUNC_DEF(ZmqReceive, 1, "zmq socket"),
-  FUNC_DEF(ZmqReceiveList, 1, "zmq socket"),
-  FUNC_DEF(ZmqClose, 1, "zmq socket"),
-  FUNC_DEF(ZmqPoll, 3, "list of input sockets, list of output sockets, timeout (ms)"),
+  GVAR_FUNC(ZmqSocket, 1, "socktype"),
+  GVAR_FUNC(ZmqBind, 2, "zmqsocket, address"),
+  GVAR_FUNC(ZmqConnect, 2, "zmqsocket, address"),
+  GVAR_FUNC(ZmqSend, 2, "zmqsocket, strings"),
+  GVAR_FUNC(ZmqReceive, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqReceiveList, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqClose, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqPoll, 3, "insockets, outsockets, timeout"),
 
-  FUNC_DEF(ZmqIsOpen, 1, "zmq socket"),
-  FUNC_DEF(ZmqIsBound, 1, "zmq socket"),
-  FUNC_DEF(ZmqIsConnected, 1, "zmq socket"),
-  FUNC_DEF(ZmqSocketURI, 1, "zmq socket"),
-  FUNC_DEF(ZmqSocketType, 1, "zmq socket"),
+  GVAR_FUNC(ZmqIsOpen, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqIsBound, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqIsConnected, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqSocketURI, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqSocketType, 1, "zmqsocket"),
 
-  FUNC_DEF(ZmqSetIdentity, 2, "zmq socket, string"),
-  FUNC_DEF(ZmqSetSendBufferSize, 2, "zmq socket, size"),
-  FUNC_DEF(ZmqSetReceiveBufferSize, 2, "zmq socket, size"),
-  FUNC_DEF(ZmqSetSendCapacity, 2, "zmq socket, count"),
-  FUNC_DEF(ZmqSetReceiveCapacity, 2, "zmq socket, count"),
-  FUNC_DEF(ZmqHasMore, 1, "zmq socket"),
-  FUNC_DEF(ZmqGetIdentity, 1, "zmq socket"),
-  FUNC_DEF(ZmqGetSendBufferSize, 1, "zmq socket"),
-  FUNC_DEF(ZmqGetReceiveBufferSize, 1, "zmq socket"),
-  FUNC_DEF(ZmqGetSendCapacity, 1, "zmq socket"),
-  FUNC_DEF(ZmqGetReceiveCapacity, 1, "zmq socket"),
-  FUNC_DEF(ZmqSubscribe, 2, "zmq socket, string"),
-  FUNC_DEF(ZmqUnsubscribe, 2, "zmq socket, string"),
+  GVAR_FUNC(ZmqSetIdentity, 2, "zmqsocket, string"),
+  GVAR_FUNC(ZmqSetSendBufferSize, 2, "zmqsocket, size"),
+  GVAR_FUNC(ZmqSetReceiveBufferSize, 2, "zmqsocket, size"),
+  GVAR_FUNC(ZmqSetSendCapacity, 2, "zmqsocket, count"),
+  GVAR_FUNC(ZmqSetReceiveCapacity, 2, "zmqsocket, count"),
+  GVAR_FUNC(ZmqHasMore, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqGetIdentity, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqGetSendBufferSize, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqGetReceiveBufferSize, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqGetSendCapacity, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqGetReceiveCapacity, 1, "zmqsocket"),
+  GVAR_FUNC(ZmqSubscribe, 2, "zmqsocket, string"),
+  GVAR_FUNC(ZmqUnsubscribe, 2, "zmqsocket, string"),
   0
 };
 
