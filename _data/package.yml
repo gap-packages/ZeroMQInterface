@@ -1,48 +1,37 @@
-name: GitHubPagesForGAP
-version: 0.2
-date: 04/02/2017
+name: zeromq
+version: 0.3
+date: 20/08/2017
 description: |
-    A GitHub Pages generator for GAP packages
+    ZeroMQ bindings for GAP
 
 authors:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: A. U. Thor
+    - name: Markus Pfeiffer
+      url: http://www.morphism.de/~markusp/
+    - name: Reimer Behrends
+      url: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
 
 maintainers:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: Jan Itor
+    - name: Markus Pfeiffer
+      url: http://www.morphism.de/~markusp/
 
-GAP: ">=4.8.1"
+GAP: ">= 4.8"
 
 needed-pkgs:
     - name: "GAPDoc"
-      version: ">= 1.2"
+      version: ">= 1.5"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "IO"
-      version: ">= 4.1"
-      url: "https://gap-packages.github.io/io"
 
-suggested-pkgs:
-    - name: "orb"
-      version: ">= 4.2"
-      url: "https://gap-packages.github.io/orb"
-
-www: https://fingolfin.github.io/GitHubPagesForGAP/
-readme: README.md
-packageinfo: https://fingolfin.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/fingolfin/GitHubPagesForGAP
+www: https://gap-packages.github.io/zeromq/
+readme: README
+packageinfo: https://gap-packages.github.io/zeromq/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/fingolfin/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.gz
-    - name: .tar.bz2
-      url: https://github.com/fingolfin/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.bz2
+      url: https://github.com/gap-packages/zeromq/releases/download/v0.3/zeromq-0.3.tar.gz
 
 abstract: |
-    This is a pseudo package that contains no actual  <span class="pkgname">GAP</span> code. Instead, it is a template for other  GAP packages that allows to quickly setup GitHub Pages.
+    
 
-status: other
+status: dev
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
