@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "zeromq",
 Subtitle := "ZeroMQ bindings for GAP",
-Version := "0.1",
-Date := "19/09/2015", # dd/mm/yyyy format
+Version := "0.3",
+Date := "20/08/2017", # dd/mm/yyyy format
 
 Persons := [
   rec(
@@ -84,7 +84,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">= 4.6",
+  GAP := ">= 4.8",
   NeededOtherPackages := [ [ "GAPDoc", ">= 1.5" ] ],
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ],
