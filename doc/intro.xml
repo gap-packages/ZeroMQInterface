@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Chapter Label="Intro">
+<Heading>Introduction</Heading>
+
+<Section>
+<Heading>Purpose and goals of this package</Heading>
+
+This package provides low-level bindings to the popular
+<URL Text="ZeroMQ">http://zeromq.org</URL> distributed
+messaging framework for &GAP; and <Package>HPC-GAP</Package> as well as some
+higher level functions to ease the use of distributed messaging in &GAP;
+
+</Section>
+
+
+<Section>
+<Heading>Overview over this manual</Heading>
+
+Chapter <Ref Chap="ZeroMQ Bindings"/> gives an overview of the available
+bindings, and examples of how to use them. Chapter <Ref Chap="Using ZeroMQ with the zgap script"/>
+showcases one way of using <Package>ZeroMQInterface</Package>.
+
+</Section>
+
+
+<Section Label="feedback">
+<Heading>Feedback</Heading>
+
+For bug reports, feature requests and suggestions, please use our
+<URL Text="issue tracker">https://github.com/gap-packages/ZeroMQInterface/issues</URL>.
+
+</Section>
+
+
+</Chapter>
+

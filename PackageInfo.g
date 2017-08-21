@@ -101,7 +101,25 @@ AvailabilityTest := function()
 
 TestFile := "tst/testall.g",
 
-Keywords := [ "ZeroMQInterface" ],
+Keywords := [ "zeromq", "messaging", "distributed" ],
+
+AutoDoc := rec(
+    TitlePage := rec(
+        Copyright :=
+"""&copyright; 2015-17 by Markus Pfeiffer, Reimer Behrends and others<P/>
+The &ZeroMQInterface; package is free software; 
+you can redistribute it and/or modify it under the terms of the 
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+as published by the Free Software Foundation; either version 2 of the License, 
+or (at your option) any later version.""",
+        Acknowledgements :=
+"""We appreciate very much all past and future comments, suggestions and 
+contributions to this package and its documentation provided by &GAP; 
+users and developers.""",
+    ),
+),
+
+
 
 ));
 
