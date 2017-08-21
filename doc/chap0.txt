@@ -1,6 +1,6 @@
   
   
-                                    [1X zeromq [101X
+                               [1X ZeroMQInterface [101X
   
   
                            [1X ZeroMQ bindings for [5XGAP[105X [101X
@@ -40,68 +40,90 @@
   
   
   -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2015-17 by Markus Pfeiffer, Reimer Behrends and others[133X
+  
+  [33X[0;0YThe [5XZeroMQInterface[105X package is free software; you can redistribute it and/or
+  modify   it   under   the   terms   of   the   GNU  General  Public  License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
   
   
-  [1XContents (zeromq)[101X
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YWe  appreciate  very  much  all  past  and  future comments, suggestions and
+  contributions  to  this  package and its documentation provided by [5XGAP[105X users
+  and developers.[133X
   
-  1 [33X[0;0YZeroMQ Bindings[133X
-    1.1 [33X[0;0YAddresses, transports, and URIs[133X
-      1.1-1 [33X[0;0YThe TCP transport[133X
-      1.1-2 [33X[0;0YThe IPC transport[133X
-      1.1-3 [33X[0;0YThe in-process transport[133X
-    1.2 [33X[0;0YCreating and closing sockets[133X
-      1.2-1 ZmqPushSocket
-      1.2-2 ZmqPullSocket
-      1.2-3 ZmqReplySocket
-      1.2-4 ZmqRequestSocket
-      1.2-5 ZmqPublisherSocket
-      1.2-6 ZmqSubscriberSocket
-      1.2-7 ZmqDealerSocket
-      1.2-8 ZmqRouterSocket
-      1.2-9 ZmqSocket
-      1.2-10 ZmqClose
-      1.2-11 ZmqIsOpen
-      1.2-12 ZmqSocketType
-    1.3 [33X[0;0YBinding and connecting sockets to addresses[133X
-      1.3-1 ZmqBind
-      1.3-2 ZmqConnect
-      1.3-3 ZmqAttach
-      1.3-4 ZmqSocketURI
-      1.3-5 ZmqIsBound
-      1.3-6 ZmqIsConnected
-    1.4 [33X[0;0YSending and receiving messages[133X
-      1.4-1 ZmqSend
-      1.4-2 ZmqReceive
-      1.4-3 ZmqReceiveList
-      1.4-4 ZmqReceiveListAsString
-      1.4-5 ZmqHasMore
-      1.4-6 ZmqPoll
-    1.5 [33X[0;0YSetting and querying socket properties[133X
-      1.5-1 ZmqSetIdentity
-      1.5-2 ZmqGetIdentity
-      1.5-3 ZmqSetSendCapacity
-      1.5-4 ZmqSetReceiveCapacity
-      1.5-5 ZmqGetSendCapacity
-      1.5-6 ZmqGetReceiveCapacity
-      1.5-7 ZmqSetSendBufferSize
-      1.5-8 ZmqGetSendBufferSize
-      1.5-9 ZmqSetReceiveBufferSize
-      1.5-10 ZmqGetReceiveBufferSize
-      1.5-11 ZmqSubscribe
-      1.5-12 ZmqUnsubscribe
-  2 [33X[0;0YUsing ZeroMQ with the zgap script[133X
-    2.1 [33X[0;0YRunning zgap[133X
-    2.2 [33X[0;0YZgap API[133X
-      2.2-1 ZExec
-      2.2-2 ZBind
-      2.2-3 ZUnbind
-      2.2-4 ZCall
-      2.2-5 ZQuery
-      2.2-6 ZResponse
-      2.2-7 ZTask
-      2.2-8 ZAsync
-      2.2-9 ZRead
-      2.2-10 ZReadGapRoot
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (ZeroMQInterface)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YPurpose and goals of this package[133X
+    1.2 [33X[0;0YOverview over this manual[133X
+    1.3 [33X[0;0YFeedback[133X
+  2 [33X[0;0YZeroMQ Bindings[133X
+    2.1 [33X[0;0YAddresses, transports, and URIs[133X
+      2.1-1 [33X[0;0YThe TCP transport[133X
+      2.1-2 [33X[0;0YThe IPC transport[133X
+      2.1-3 [33X[0;0YThe in-process transport[133X
+    2.2 [33X[0;0YCreating and closing sockets[133X
+      2.2-1 ZmqPushSocket
+      2.2-2 ZmqPullSocket
+      2.2-3 ZmqReplySocket
+      2.2-4 ZmqRequestSocket
+      2.2-5 ZmqPublisherSocket
+      2.2-6 ZmqSubscriberSocket
+      2.2-7 ZmqDealerSocket
+      2.2-8 ZmqRouterSocket
+      2.2-9 ZmqSocket
+      2.2-10 ZmqClose
+      2.2-11 ZmqIsOpen
+      2.2-12 ZmqSocketType
+    2.3 [33X[0;0YBinding and connecting sockets to addresses[133X
+      2.3-1 ZmqBind
+      2.3-2 ZmqConnect
+      2.3-3 ZmqAttach
+      2.3-4 ZmqSocketURI
+      2.3-5 ZmqIsBound
+      2.3-6 ZmqIsConnected
+    2.4 [33X[0;0YSending and receiving messages[133X
+      2.4-1 ZmqSend
+      2.4-2 ZmqReceive
+      2.4-3 ZmqReceiveList
+      2.4-4 ZmqReceiveListAsString
+      2.4-5 ZmqHasMore
+      2.4-6 ZmqPoll
+    2.5 [33X[0;0YSetting and querying socket properties[133X
+      2.5-1 ZmqSetIdentity
+      2.5-2 ZmqGetIdentity
+      2.5-3 ZmqSetSendCapacity
+      2.5-4 ZmqSetReceiveCapacity
+      2.5-5 ZmqGetSendCapacity
+      2.5-6 ZmqGetReceiveCapacity
+      2.5-7 ZmqSetSendBufferSize
+      2.5-8 ZmqGetSendBufferSize
+      2.5-9 ZmqSetReceiveBufferSize
+      2.5-10 ZmqGetReceiveBufferSize
+      2.5-11 ZmqSubscribe
+      2.5-12 ZmqUnsubscribe
+  3 [33X[0;0YUsing ZeroMQ with the zgap script[133X
+    3.1 [33X[0;0YRunning zgap[133X
+    3.2 [33X[0;0YZgap API[133X
+      3.2-1 ZExec
+      3.2-2 ZBind
+      3.2-3 ZUnbind
+      3.2-4 ZCall
+      3.2-5 ZQuery
+      3.2-6 ZResponse
+      3.2-7 ZTask
+      3.2-8 ZAsync
+      3.2-9 ZRead
+      3.2-10 ZReadGapRoot
   
   
   [32X

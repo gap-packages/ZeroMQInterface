@@ -1,5 +1,5 @@
 #
-# zeromq: ZeroMQ bindings for GAP
+# ZeroMQInterface: ZeroMQ bindings for GAP
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -8,7 +8,7 @@
 #
 SetPackageInfo( rec(
 
-PackageName := "zeromq",
+PackageName := "ZeroMQInterface",
 Subtitle := "ZeroMQ bindings for GAP",
 Version := "0.5",
 Date := "21/08/2017", # dd/mm/yyyy format
@@ -48,16 +48,16 @@ Persons := [
   ),
 ],
 
-PackageWWWHome := "https://gap-packages.github.io/zeromq/",
+PackageWWWHome := "https://gap-packages.github.io/ZeroMQInterface/",
 
-ArchiveURL     := Concatenation("https://github.com/gap-packages/zeromq/",
+ArchiveURL     := Concatenation("https://github.com/gap-packages/ZeroMQInterface/",
                                 "releases/download/v", ~.Version,
-                                "/zeromq-", ~.Version),
+                                "/ZeroMQInterface-", ~.Version),
 README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 SourceRepository := rec( 
   Type := "git", 
-  URL := "https://github.com/gap-packages/zeromq"
+  URL := "https://github.com/gap-packages/ZeroMQInterface"
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 ArchiveFormats := ".tar.gz",
@@ -75,7 +75,7 @@ Status := "dev",
 AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  BookName  := "zeromq",
+  BookName  := "ZeroMQInterface",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
@@ -91,9 +91,9 @@ Dependencies := rec(
 ),
 
 AvailabilityTest := function()
-        if not "zeromq" in SHOW_STAT() and
-           Filename(DirectoriesPackagePrograms("zeromq"), "zeromq.so") = fail then
-          #Info(InfoWarning, 1, "zeromq: kernel zeromq functions not available.");
+        if not "ZeroMQInterface" in SHOW_STAT() and
+           Filename(DirectoriesPackagePrograms("ZeroMQInterface"), "zeromqinterface.so") = fail then
+          #Info(InfoWarning, 1, "ZeroMQInterface: kernel ZeroMQInterface functions not available.");
           return fail;
         fi;
         return true;
@@ -101,7 +101,25 @@ AvailabilityTest := function()
 
 TestFile := "tst/testall.g",
 
-Keywords := [ "zeromq" ],
+Keywords := [ "zeromq", "messaging", "distributed" ],
+
+AutoDoc := rec(
+    TitlePage := rec(
+        Copyright :=
+"""&copyright; 2015-17 by Markus Pfeiffer, Reimer Behrends and others<P/>
+The &ZeroMQInterface; package is free software; 
+you can redistribute it and/or modify it under the terms of the 
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
+as published by the Free Software Foundation; either version 2 of the License, 
+or (at your option) any later version.""",
+        Acknowledgements :=
+"""We appreciate very much all past and future comments, suggestions and 
+contributions to this package and its documentation provided by &GAP; 
+users and developers.""",
+    ),
+),
+
+
 
 ));
 
