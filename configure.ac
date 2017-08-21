@@ -40,7 +40,7 @@ AC_FIND_GAP
 dnl ##
 dnl ## Locate ZeroMQ >= 2.0.0
 dnl ##
-AX_ZMQ([2.0.0])
+AX_ZMQ([2.0.0], [], [AC_MSG_ERROR([ZeroMQ is required to build this package])])
 
 
 dnl ##
