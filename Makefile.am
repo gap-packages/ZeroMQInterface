@@ -1,27 +1,27 @@
 ACLOCAL_AMFLAGS = -I m4
 
 BINARCHDIR = bin/$(GAPARCH)
-GAPINSTALLLIB = $(abs_top_srcdir)/$(BINARCHDIR)/zeromq.so
+GAPINSTALLLIB = $(abs_top_srcdir)/$(BINARCHDIR)/zeromqinterface.so
 
-lib_LTLIBRARIES = zeromq.la
+lib_LTLIBRARIES = zeromqinterface.la
 
-zeromq_la_SOURCES = \
+zeromqinterface_la_SOURCES = \
     src/zmqgap.c \
     src/zmqgap.h
-zeromq_la_CPPFLAGS = $(GAP_CPPFLAGS) -DCONFIG_H $(ZMQ_CPPFLAGS)
-zeromq_la_LDFLAGS = -module -avoid-version
+zeromqinterface_la_CPPFLAGS = $(GAP_CPPFLAGS) -DCONFIG_H $(ZMQ_CPPFLAGS)
+zeromqinterface_la_LDFLAGS = -module -avoid-version
 if SYS_IS_CYGWIN
-zeromq_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
+zeromqinterface_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
 endif
-zeromq_la_LDFLAGS += $(ZMQ_LDFLAGS) $(ZMQ_LIBS)
+zeromqinterface_la_LDFLAGS += $(ZMQ_LDFLAGS) $(ZMQ_LIBS)
 
 
-all-local: zeromq.la
+all-local: zeromqinterface.la
 	$(mkdir_p) $(top_srcdir)/$(BINARCHDIR)
 if SYS_IS_CYGWIN
-	cp .libs/zeromq.dll $(GAPINSTALLLIB)
+	cp .libs/zeromqinterface.dll $(GAPINSTALLLIB)
 else
-	cp .libs/zeromq.so $(GAPINSTALLLIB)
+	cp .libs/zeromqinterface.so $(GAPINSTALLLIB)
 endif
 	@echo "SUCCESS!"
 

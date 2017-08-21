@@ -4,7 +4,7 @@
 # - document this
 # - make it work outside of $GAPROOT/bin
 # - add proper error handling, e.g. when gap.sh cannot be found
-# - make sure the GAP instances call 'LoadPackage("zeromq");'
+# - make sure the GAP instances call 'LoadPackage("zeromqinterface");'
 # - make sure this actually works (again :-)
 
 import sys, os, subprocess, time, tempfile, shutil, re, glob
