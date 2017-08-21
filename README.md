@@ -4,7 +4,7 @@
 # The ZeroMQInterface GAP package
 
 This package provides both low-level bindings as well as some higher level
-interfaces for the [ZeroMQ](https://zeromq.org) message passing library
+interfaces for the [ZeroMQ](http://zeromq.org) message passing library
 for GAP and HPC-GAP, enabling lightweight distributed computation.
 
 ## Documentation
