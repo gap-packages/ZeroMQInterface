@@ -62,7 +62,7 @@ Handlers@ := MakeWriteOnceAtomic( rec(
      Display(arg[1]);
    end,
    Exec := function(arg)
-     READ_COMMAND(InputTextString(arg[1]), false);
+     READ_COMMAND_REAL(InputTextString(arg[1]), false);
    end,
    Eval := function(arg)
      local result;
