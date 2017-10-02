@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "ZeroMQInterface",
 Subtitle := "ZeroMQ bindings for GAP",
-Version := "0.6",
-Date := "21/08/2017", # dd/mm/yyyy format
+Version := "0.7",
+Date := "02/10/2017", # dd/mm/yyyy format
 
 Persons := [
   rec(
@@ -53,7 +53,7 @@ PackageWWWHome := "https://gap-packages.github.io/ZeroMQInterface/",
 ArchiveURL     := Concatenation("https://github.com/gap-packages/ZeroMQInterface/",
                                 "releases/download/v", ~.Version,
                                 "/ZeroMQInterface-", ~.Version),
-README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
+README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 SourceRepository := rec( 
   Type := "git", 
