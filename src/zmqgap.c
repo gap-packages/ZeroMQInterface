@@ -557,8 +557,13 @@ static Obj FuncZmqPoll(Obj self, Obj in, Obj out, Obj timeout) {
   to = INT_INTOBJ(timeout);
   if (to < 0) to = -1;
   n = zmq_poll(items, p, to);
-  if (n < 0)
-    ZmqError("ZmqPoll");
+  if (n < 0) {
+    if (errno == EINTR) {
+      result = NEW_PLIST(T_PLIST, 0);
+      return result;
+    } else
+      ZmqError("ZmqPoll");
+  }
   if (n > 0)
     result = NEW_PLIST(T_PLIST_CYC_SSORT, n);
   else
