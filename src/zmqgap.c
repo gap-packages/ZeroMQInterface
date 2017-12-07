@@ -646,18 +646,10 @@ static Int InitLibrary ( StructInitInfo *module )
 */
 
 static StructInitInfo module = {
- /* type        = */ MODULE_BUILTIN,
- /* name        = */ "zmq",
- /* revision_c  = */ 0,
- /* revision_h  = */ 0,
- /* version     = */ 0,
- /* crc         = */ 0,
- /* initKernel  = */ InitKernel,
- /* initLibrary = */ InitLibrary,
- /* checkInit   = */ 0,
- /* preSave     = */ 0,
- /* postSave    = */ 0,
- /* postRestore = */ 0
+    .type = MODULE_BUILTIN,
+    .name = "zmq",
+    .initKernel = InitKernel,
+    .initLibrary = InitLibrary,
 };
 
 StructInitInfo *InitInfoZmq ( void )
