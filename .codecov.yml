@@ -5,8 +5,8 @@ coverage:
 
   status:
     project: no
-    patch: no
-    changes: no
+    patch: yes
+    changes: yes
 
 comment:
   layout: "header, diff, changes, tree"
