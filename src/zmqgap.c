@@ -66,7 +66,9 @@ static void BadArg(char *fname, int pos, char *message) {
 static int IsOpenSocket(Obj obj) {
   if (TNUM_OBJ(obj) == T_DATOBJ &&
       ADDR_OBJ(obj)[0] == TypeZmqSocket()) {
+#ifdef HPCGAP
     WriteGuard(obj);
+#endif
     if (!ADDR_OBJ(obj)[ZMQ_DAT_SOCKET_OFF])
       ErrorQuit("Attempt to operate on a closed zmq socket", 0L, 0L);
     return 1;
@@ -77,7 +79,9 @@ static int IsOpenSocket(Obj obj) {
 static int IsSocket(Obj obj) {
   if (TNUM_OBJ(obj) == T_DATOBJ &&
       ADDR_OBJ(obj)[0] == TypeZmqSocket()) {
+#ifdef HPCGAP
     ReadGuard(obj);
+#endif
     return 1;
   }
   return 0;
