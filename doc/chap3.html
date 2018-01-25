@@ -90,14 +90,14 @@ bin/zgap -N 4:+0-3 -P 8 -m 1G common.g
 
 <h5>3.2-1 ZExec</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZExec</code>( <var class="Arg">dest</var>, <var class="Arg">cmd</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZExec</code>( <var class="Arg">dest</var>, <var class="Arg">cmd</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function sends <code class="code">cmd</code> to the given destination and executes it there. The command must be a valid GAP statement ending in a semicolon. If <code class="code">dest</code> specifies multiple processes, the command will be executed on all of them.</p>
 
 <p><a id="X7A8B812C86B04F6F" name="X7A8B812C86B04F6F"></a></p>
 
 <h5>3.2-2 ZBind</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZBind</code>( <var class="Arg">dest</var>, <var class="Arg">var</var>, <var class="Arg">expr</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZBind</code>( <var class="Arg">dest</var>, <var class="Arg">var</var>, <var class="Arg">expr</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function binds the global variable described by the string <code class="code">var</code> to the value <code class="code">expr</code> in all processes listed in <code class="code">dest</code>. Note that <code class="code">expr</code> must evaluate to a serializable value.</p>
 
 
@@ -109,7 +109,7 @@ bin/zgap -N 4:+0-3 -P 8 -m 1G common.g
 
 <h5>3.2-3 ZUnbind</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZUnbind</code>( <var class="Arg">dest</var>, <var class="Arg">var</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZUnbind</code>( <var class="Arg">dest</var>, <var class="Arg">var</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function is the counterpart to <code class="code">ZBind</code>. It will unbind <code class="code">var</code> in all specified processes.</p>
 
 
@@ -121,7 +121,7 @@ bin/zgap -N 4:+0-3 -P 8 -m 1G common.g
 
 <h5>3.2-4 ZCall</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZCall</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZCall</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function will execute the function specified by the string <code class="code">func</code> in the specified processes. The string <code class="code">func</code> must be the name of a global variable referring to the function to be executed. This function should be created at startup by adding a file to the commandline that defines it in all workers or by <code class="code">ZExec</code>.</p>
 
 
@@ -135,7 +135,7 @@ bin/zgap -N 4:+0-3 -P 8 -m 1G common.g
 
 <h5>3.2-5 ZQuery</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZQuery</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var>, <var class="Arg">callback</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZQuery</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var>, <var class="Arg">callback</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function works like <code class="code">ZCall</code>, except that any return value will be passed to the callback function.</p>
 
 
@@ -151,7 +151,7 @@ true
 
 <h5>3.2-6 ZResponse</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZResponse</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZResponse</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">ZResponse</code> is a convenience function to construct blocking callbacks for <code class="code">ZCall</code> and <code class="code">ZTask</code>. It returns a record containing a <code class="code">put</code>, a <code class="code">get</code>, and a <code class="code">test</code> function. Here, <code class="code">put</code> is passed as the callback; <code class="code">get</code> can be used to read the returned value; and <code class="code">test</code> can be used to test for the presence of a value.</p>
 
 
@@ -168,28 +168,28 @@ true
 
 <h5>3.2-7 ZTask</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZTask</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var>, <var class="Arg">callback</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZTask</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var>, <var class="Arg">callback</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function works like <code class="code">ZQuery</code>, except that the function will be executed via a task and <code class="code">callback</code> will be called after the task finishes and returns a result.</p>
 
 <p><a id="X8334DF718141DE22" name="X8334DF718141DE22"></a></p>
 
 <h5>3.2-8 ZAsync</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZAsync</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZAsync</code>( <var class="Arg">dest</var>, <var class="Arg">func</var>, <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function works like <code class="code">ZCall</code>, except that the function will be executed via a task.</p>
 
 <p><a id="X87623A0F870BF0D9" name="X87623A0F870BF0D9"></a></p>
 
 <h5>3.2-9 ZRead</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZRead</code>( <var class="Arg">dest</var>, <var class="Arg">file</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZRead</code>( <var class="Arg">dest</var>, <var class="Arg">file</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function does a <code class="code">Read(file)</code> for all specified processes.</p>
 
 <p><a id="X852FCB6F7D337E65" name="X852FCB6F7D337E65"></a></p>
 
 <h5>3.2-10 ZReadGapRoot</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZReadGapRoot</code>( <var class="Arg">dest</var>, <var class="Arg">file</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZReadGapRoot</code>( <var class="Arg">dest</var>, <var class="Arg">file</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>This function does a <code class="code">ReadGapRoot(file)</code> for all specified processes.</p>
 
 <p> </p>

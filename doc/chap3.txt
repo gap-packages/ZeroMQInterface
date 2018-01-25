@@ -64,7 +64,7 @@
   
   [1X3.2-1 ZExec[101X
   
-  [29X[2XZExec[102X( [3Xdest[103X, [3Xcmd[103X ) [32X function
+  [33X[1;0Y[29X[2XZExec[102X( [3Xdest[103X, [3Xcmd[103X ) [32X function[133X
   
   [33X[0;0YThis  function sends [10Xcmd[110X to the given destination and executes it there. The
   command  must  be  a  valid  GAP  statement  ending  in a semicolon. If [10Xdest[110X
@@ -72,7 +72,7 @@
   
   [1X3.2-2 ZBind[101X
   
-  [29X[2XZBind[102X( [3Xdest[103X, [3Xvar[103X, [3Xexpr[103X ) [32X function
+  [33X[1;0Y[29X[2XZBind[102X( [3Xdest[103X, [3Xvar[103X, [3Xexpr[103X ) [32X function[133X
   
   [33X[0;0YThis  function  binds the global variable described by the string [10Xvar[110X to the
   value  [10Xexpr[110X in all processes listed in [10Xdest[110X. Note that [10Xexpr[110X must evaluate to
@@ -84,7 +84,7 @@
   
   [1X3.2-3 ZUnbind[101X
   
-  [29X[2XZUnbind[102X( [3Xdest[103X, [3Xvar[103X ) [32X function
+  [33X[1;0Y[29X[2XZUnbind[102X( [3Xdest[103X, [3Xvar[103X ) [32X function[133X
   
   [33X[0;0YThis  function  is  the  counterpart  to  [10XZBind[110X.  It  will unbind [10Xvar[110X in all
   specified processes.[133X
@@ -95,7 +95,7 @@
   
   [1X3.2-4 ZCall[101X
   
-  [29X[2XZCall[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X ) [32X function
+  [33X[1;0Y[29X[2XZCall[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X ) [32X function[133X
   
   [33X[0;0YThis  function will execute the function specified by the string [10Xfunc[110X in the
   specified  processes.  The string [10Xfunc[110X must be the name of a global variable
@@ -111,7 +111,7 @@
   
   [1X3.2-5 ZQuery[101X
   
-  [29X[2XZQuery[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X, [3Xcallback[103X ) [32X function
+  [33X[1;0Y[29X[2XZQuery[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X, [3Xcallback[103X ) [32X function[133X
   
   [33X[0;0YThis  function works like [10XZCall[110X, except that any return value will be passed
   to the callback function.[133X
@@ -126,7 +126,7 @@
   
   [1X3.2-6 ZResponse[101X
   
-  [29X[2XZResponse[102X(  ) [32X function
+  [33X[1;0Y[29X[2XZResponse[102X(  ) [32X function[133X
   
   [33X[0;0Y[10XZResponse[110X  is  a  convenience  function  to construct blocking callbacks for
   [10XZCall[110X  and  [10XZTask[110X.  It  returns a record containing a [10Xput[110X, a [10Xget[110X, and a [10Xtest[110X
@@ -144,7 +144,7 @@
   
   [1X3.2-7 ZTask[101X
   
-  [29X[2XZTask[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X, [3Xcallback[103X ) [32X function
+  [33X[1;0Y[29X[2XZTask[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X, [3Xcallback[103X ) [32X function[133X
   
   [33X[0;0YThis  function  works like [10XZQuery[110X, except that the function will be executed
   via a task and [10Xcallback[110X will be called after the task finishes and returns a
@@ -152,20 +152,20 @@
   
   [1X3.2-8 ZAsync[101X
   
-  [29X[2XZAsync[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X ) [32X function
+  [33X[1;0Y[29X[2XZAsync[102X( [3Xdest[103X, [3Xfunc[103X, [3Xargs[103X ) [32X function[133X
   
   [33X[0;0YThis  function  works  like [10XZCall[110X, except that the function will be executed
   via a task.[133X
   
   [1X3.2-9 ZRead[101X
   
-  [29X[2XZRead[102X( [3Xdest[103X, [3Xfile[103X ) [32X function
+  [33X[1;0Y[29X[2XZRead[102X( [3Xdest[103X, [3Xfile[103X ) [32X function[133X
   
   [33X[0;0YThis function does a [10XRead(file)[110X for all specified processes.[133X
   
   [1X3.2-10 ZReadGapRoot[101X
   
-  [29X[2XZReadGapRoot[102X( [3Xdest[103X, [3Xfile[103X ) [32X function
+  [33X[1;0Y[29X[2XZReadGapRoot[102X( [3Xdest[103X, [3Xfile[103X ) [32X function[133X
   
   [33X[0;0YThis function does a [10XReadGapRoot(file)[110X for all specified processes.[133X
   

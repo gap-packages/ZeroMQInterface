@@ -68,7 +68,7 @@
   
   [1X2.2-1 ZmqPushSocket[101X
   
-  [29X[2XZmqPushSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqPushSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA  push  socket  is  one  end  of  a  unidirectional pipe. Programs can send
   messages  to  it,  which  will  be delivered to a matched pull socket at the
@@ -76,13 +76,13 @@
   
   [1X2.2-2 ZmqPullSocket[101X
   
-  [29X[2XZmqPullSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqPullSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA pull socket is the other end of a unidirectional pipe.[133X
   
   [1X2.2-3 ZmqReplySocket[101X
   
-  [29X[2XZmqReplySocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqReplySocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA  reply  socket  provides  the  server  side  of  a  remote-procedure  call
   interaction. It alternates between receiving a message and sending a message
@@ -92,7 +92,7 @@
   
   [1X2.2-4 ZmqRequestSocket[101X
   
-  [29X[2XZmqRequestSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqRequestSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA  request  socket  provides  the  client  side  of  a remote-procedure call
   interaction.  It  will  alternate  between  sending a message to a connected
@@ -100,14 +100,14 @@
   
   [1X2.2-5 ZmqPublisherSocket[101X
   
-  [29X[2XZmqPublisherSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqPublisherSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA publisher socket is a unidirectional broadcast facility. It will send each
   outgoing message to all connected subscriber sockets.[133X
   
   [1X2.2-6 ZmqSubscriberSocket[101X
   
-  [29X[2XZmqSubscriberSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqSubscriberSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA  subscriber  socket  receives  messages  from  a  publisher socket. It can
   subscribe  to  only  a  specific  subseet  of messages (see the [2XZmqSubscribe[102X
@@ -115,7 +115,7 @@
   
   [1X2.2-7 ZmqDealerSocket[101X
   
-  [29X[2XZmqDealerSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqDealerSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YA  dealer socket is a bidirectional socket. One or more peers can connect to
   it.  Outgoing  messages will be sent to those peers in a round-robin fashion
@@ -127,7 +127,7 @@
   
   [1X2.2-8 ZmqRouterSocket[101X
   
-  [29X[2XZmqRouterSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function
+  [33X[1;0Y[29X[2XZmqRouterSocket[102X( [[3Xuri[103X[, [3Xidentity[103X]] ) [32X function[133X
   
   [33X[0;0YRouter  sockets,  like  dealer sockets, can have multiple peers connected to
   them.  Incoming  messages  are  handled  the same way as for dealer sockets.
@@ -138,7 +138,7 @@
   
   [1X2.2-9 ZmqSocket[101X
   
-  [29X[2XZmqSocket[102X( [3Xtype[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSocket[102X( [3Xtype[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSocket[110X  is  a  low-level  function  that is used by [10XZmqPushSocket[110X etc. to
   create  sockets. Its argument is a string, one of [21XPUSH[121X, [21XPULL[121X, [21XREP[121X, [21XREQ[121X, [21XPUB[121X,
@@ -146,7 +146,7 @@
   
   [1X2.2-10 ZmqClose[101X
   
-  [29X[2XZmqClose[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqClose[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqClose[110X  closes [10Xsocket[110X. Afterwards, it cannot anymore be bound or connected
   to,  nor receive or send messages. Messages already in transit will still be
@@ -154,13 +154,13 @@
   
   [1X2.2-11 ZmqIsOpen[101X
   
-  [29X[2XZmqIsOpen[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqIsOpen[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqIsOpen[110X returns true if [10Xsocket[110X has not been closed yet, false otherwise.[133X
   
   [1X2.2-12 ZmqSocketType[101X
   
-  [29X[2XZmqSocketType[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSocketType[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSocketType[110X  returns  the  string  with  which the socket was created (see
   [2XZmqSocket[102X ([14X2.2-9[114X)).[133X
@@ -170,7 +170,7 @@
   
   [1X2.3-1 ZmqBind[101X
   
-  [29X[2XZmqBind[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqBind[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqBind[110X  will [13Xbind[113X [10Xsocket[110X to [10Xuri[110X. After being bound to the address specified
   by  [10Xuri[110X,  the  socket  can  be  connected to at that address with [2XZmqConnect[102X
@@ -178,7 +178,7 @@
   
   [1X2.3-2 ZmqConnect[101X
   
-  [29X[2XZmqConnect[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqConnect[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqConnect[110X  is  used to connect [10Xsocket[110X to another socket that has been bound
   to [10Xuri[110X. Note that you can connect to an address that has not been bound yet;
@@ -186,7 +186,7 @@
   
   [1X2.3-3 ZmqAttach[101X
   
-  [29X[2XZmqAttach[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqAttach[102X( [3Xsocket[103X, [3Xuri[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqAttach[110X is a unified interface for binding and connecting a socket. If [10Xuri[110X
   begins  with  a  [21X+[121X character, then the [2XZmqConnect[102X ([14X2.3-2[114X) is called with the
@@ -196,7 +196,7 @@
   
   [1X2.3-4 ZmqSocketURI[101X
   
-  [29X[2XZmqSocketURI[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSocketURI[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSocketURI[110X  returns  the most recent URI to which [10Xsocket[110X has been bound or
   connected.  Sockets  can be bound to or connected to multiple addresses, but
@@ -204,14 +204,14 @@
   
   [1X2.3-5 ZmqIsBound[101X
   
-  [29X[2XZmqIsBound[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqIsBound[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqIsBound[110X returns true if the socket has been bound to the address returned
   by [10XZmqSocketURI()[110X, false otherwise.[133X
   
   [1X2.3-6 ZmqIsConnected[101X
   
-  [29X[2XZmqIsConnected[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqIsConnected[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqIsBound[110X  returns  true  if  the  socket has been connected to the address
   returned by [10XZmqSocketURI()[110X, false otherwise.[133X
@@ -231,14 +231,14 @@
   
   [1X2.4-1 ZmqSend[101X
   
-  [29X[2XZmqSend[102X( [3Xsocket[103X, [3Xdata[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSend[102X( [3Xsocket[103X, [3Xdata[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSend[110X  will  send [10Xdata[110X to [10Xsocket[110X, according to the routing behavior of the
   underlying socket mechanism.[133X
   
   [1X2.4-2 ZmqReceive[101X
   
-  [29X[2XZmqReceive[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqReceive[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqReceive[110X  will  either  retrieve  a  string  message or a single part of a
   multi-part message from [10Xsocket[110X and return the result as a GAP string.[133X
@@ -258,7 +258,7 @@
   
   [1X2.4-3 ZmqReceiveList[101X
   
-  [29X[2XZmqReceiveList[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqReceiveList[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqReceiveList[110X  will  retrieve  a  message  in  its entirety from [10Xsocket[110X and
   return the result as a list of strings.[133X
@@ -276,7 +276,7 @@
   
   [1X2.4-4 ZmqReceiveListAsString[101X
   
-  [29X[2XZmqReceiveListAsString[102X( [3Xsocket[103X, [3Xseparator[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqReceiveListAsString[102X( [3Xsocket[103X, [3Xseparator[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqReceiveListAsString[110X works like [10XZmqReceiveList[110X, but will return the result
   a single string, with multiple parts separated by [10Xseparator[110X.[133X
@@ -294,7 +294,7 @@
   
   [1X2.4-5 ZmqHasMore[101X
   
-  [29X[2XZmqHasMore[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqHasMore[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqHasMore[110X will return [10Xtrue[110X if a socket has one or more remaining parts of a
   multi-part message outstanding, [10Xfalse[110X otherwise.[133X
@@ -320,7 +320,7 @@
   
   [1X2.4-6 ZmqPoll[101X
   
-  [29X[2XZmqPoll[102X( [3Xinputs[103X, [3Xoutputs[103X, [3Xtimeout[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqPoll[102X( [3Xinputs[103X, [3Xoutputs[103X, [3Xtimeout[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqPoll[110X  is  a facility to determine if messages can be received from one of
   the  sockets  listed  in  [10Xinputs[110X  or  sent  to  one of the sockets listed in
@@ -375,7 +375,7 @@
   
   [1X2.5-1 ZmqSetIdentity[101X
   
-  [29X[2XZmqSetIdentity[102X( [3Xsocket[103X, [3Xstring[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSetIdentity[102X( [3Xsocket[103X, [3Xstring[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSetIdentity[110X  can be used to give the socket an identity. An identity is a
   string  of  up to 255 characters that should not start with a null character
@@ -385,69 +385,69 @@
   
   [1X2.5-2 ZmqGetIdentity[101X
   
-  [29X[2XZmqGetIdentity[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqGetIdentity[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqGetIdentity[110X returns the current identity of the socket.[133X
   
   [1X2.5-3 ZmqSetSendCapacity[101X
   
-  [29X[2XZmqSetSendCapacity[102X( [3Xsocket[103X, [3Xvalue[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSetSendCapacity[102X( [3Xsocket[103X, [3Xvalue[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSetSendCapacity[110X  sets  the  maximum  number of messages that a socket can
   store in its outgoing buffer.[133X
   
   [1X2.5-4 ZmqSetReceiveCapacity[101X
   
-  [29X[2XZmqSetReceiveCapacity[102X( [3Xsocket[103X, [3Xvalue[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSetReceiveCapacity[102X( [3Xsocket[103X, [3Xvalue[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSetReceiveCapacity[110X  sets the maximum number of messages that a socket can
   store in its outgoing buffer.[133X
   
   [1X2.5-5 ZmqGetSendCapacity[101X
   
-  [29X[2XZmqGetSendCapacity[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqGetSendCapacity[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqGetSendCapacity[110X  returns the maximum number of messages that a socket can
   store in its outgoing buffer.[133X
   
   [1X2.5-6 ZmqGetReceiveCapacity[101X
   
-  [29X[2XZmqGetReceiveCapacity[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqGetReceiveCapacity[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqGetReceiveCapacity[110X  returns  the maximum number of messages that a socket
   can store in its incoming buffer.[133X
   
   [1X2.5-7 ZmqSetSendBufferSize[101X
   
-  [29X[2XZmqSetSendBufferSize[102X( [3Xsocket[103X, [3Xsize[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSetSendBufferSize[102X( [3Xsocket[103X, [3Xsize[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSetSendBufferSize[110X  sets  the  size of the transmission buffer used by the
   underlying operating system structure for sending data.[133X
   
   [1X2.5-8 ZmqGetSendBufferSize[101X
   
-  [29X[2XZmqGetSendBufferSize[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqGetSendBufferSize[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqGetSendBufferSize[110X returns the size of the transmission buffer used by the
   underlying operating system structure for sending data.[133X
   
   [1X2.5-9 ZmqSetReceiveBufferSize[101X
   
-  [29X[2XZmqSetReceiveBufferSize[102X( [3Xsocket[103X, [3Xsize[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSetReceiveBufferSize[102X( [3Xsocket[103X, [3Xsize[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqSetReceiveBufferSize[110X sets the size of the transmission buffer used by the
   underlying operating system structure for receiving data.[133X
   
   [1X2.5-10 ZmqGetReceiveBufferSize[101X
   
-  [29X[2XZmqGetReceiveBufferSize[102X( [3Xsocket[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqGetReceiveBufferSize[102X( [3Xsocket[103X ) [32X function[133X
   
   [33X[0;0Y[10XZmqGetReceiveBufferSize[110X  returns the size of the transmission buffer used by
   the underlying operating system structure for receiving data.[133X
   
   [1X2.5-11 ZmqSubscribe[101X
   
-  [29X[2XZmqSubscribe[102X( [3Xsocket[103X, [3Xprefix[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqSubscribe[102X( [3Xsocket[103X, [3Xprefix[103X ) [32X function[133X
   
   [33X[0;0YThe  [10XZmqSubscribe[110X  function  can  only be used for Subscriber sockets. After
   calling  it,  only  messages that begin with the given prefix string will be
@@ -457,7 +457,7 @@
   
   [1X2.5-12 ZmqUnsubscribe[101X
   
-  [29X[2XZmqUnsubscribe[102X( [3Xsocket[103X, [3Xprefix[103X ) [32X function
+  [33X[1;0Y[29X[2XZmqUnsubscribe[102X( [3Xsocket[103X, [3Xprefix[103X ) [32X function[133X
   
   [33X[0;0YThe  [10XZmqUnsubscribe[110X  function  removes  the  given  prefix  string  from the
   socket's subscription list.[133X
