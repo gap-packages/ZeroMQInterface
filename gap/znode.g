@@ -89,7 +89,7 @@ Handlers@ := MakeWriteOnceAtomic( rec(
    Call := function(arg)
      local func;
      if IsBoundGlobal(arg[1]) then
-       func := VAL_GVAR(arg[1]);
+       func := ValueGlobal(arg[1]);
        CALL_FUNC_LIST(func, arg[2]);
      else
        ZError(arg[3], Concatenation("Function not found: ", arg[1]));
@@ -98,7 +98,7 @@ Handlers@ := MakeWriteOnceAtomic( rec(
    Query := function(arg)
      local func, result;
      if IsBoundGlobal(arg[1]) then
-       func := VAL_GVAR(arg[1]);
+       func := ValueGlobal(arg[1]);
        result := CALL_FUNC_LIST(func, arg[2]);
        ZRespond@(arg[4], arg[3], result);
      else
@@ -108,7 +108,7 @@ Handlers@ := MakeWriteOnceAtomic( rec(
    Async := function(arg)
      local func, args;
      if IsBoundGlobal(arg[1]) then
-       func := VAL_GVAR(arg[1]);
+       func := ValueGlobal(arg[1]);
        args := arg[2];
        Add(args, func, 1);
        CALL_FUNC_LIST(RunAsyncTask, args);
@@ -119,7 +119,7 @@ Handlers@ := MakeWriteOnceAtomic( rec(
    Task := function(arg)
      local func, result;
      if IsBoundGlobal(arg[1]) then
-       func := VAL_GVAR(arg[1]);
+       func := ValueGlobal(arg[1]);
        RunAsyncTask(function(args, replynode, ticket)
 	 result := CALL_FUNC_LIST(func, args);
 	 ZRespond@(replynode, ticket, result);
