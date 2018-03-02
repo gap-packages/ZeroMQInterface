@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "ZeroMQInterface",
 Subtitle := "ZeroMQ bindings for GAP",
-Version := "0.9",
-Date := "25/01/2018", # dd/mm/yyyy format
+Version := "0.10",
+Date := "02/03/2018", # dd/mm/yyyy format
 
 Persons := [
   rec(
