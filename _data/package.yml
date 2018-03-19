@@ -1,6 +1,6 @@
 name: ZeroMQInterface
 version: 0.10
-date: 02/03/2018
+date: 2018-03-02
 description: |
     ZeroMQ bindings for GAP
 
@@ -30,7 +30,6 @@ downloads:
       url: https://github.com/gap-packages/ZeroMQInterface/releases/download/v0.10/ZeroMQInterface-0.10.tar.gz
 
 abstract: |
-    
 
 status: dev
 doc-html: doc/chap0.html
