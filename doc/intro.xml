@@ -23,6 +23,19 @@ showcases one way of using <Package>ZeroMQInterface</Package>.
 
 </Section>
 
+<Section>
+<Heading>Installation</Heading>
+To use this package &ZeroMQ; needs to be installed on your system and the
+<Package>ZeroMQInterface</Package> package itself needs to be compiled.
+To install &ZeroMQ; please refer to its
+<URL Text="installation instructions">http://zeromq.org/intro:get-the-software</URL>.
+To compile this package, inside its root directory run:
+<Log>
+> ./configure
+> make
+</Log>
+
+</Section>
 
 <Section Label="feedback">
 <Heading>Feedback</Heading>

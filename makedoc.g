@@ -10,7 +10,10 @@ fi;
 AutoDoc(rec( 
     autodoc := true,
     scaffold := rec(
-        includes := [ "intro.xml", "zmq.xml", "zgap.xml" ]
+        includes := [ "intro.xml", "zmq.xml", "zgap.xml" ],
+        entities := rec(
+            ZeroMQ := "<URL Text=\"ZeroMQ\">https://zeromq.org</URL>"
+        )
     )
 ));
 
