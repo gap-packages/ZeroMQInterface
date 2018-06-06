@@ -42,12 +42,6 @@ dnl ## Locate ZeroMQ >= 2.0.0
 dnl ##
 AX_ZMQ([2.0.0], [], [AC_MSG_ERROR([ZeroMQ is required to build this package])])
 
-
-dnl ##
-dnl ## Detect pointer size to distinguish 32 and 64 bit builds
-dnl ##
-AC_CHECK_SIZEOF([void **])
-
 dnl ##
 dnl ## Detect Windows resp. Cygwin
 dnl ##

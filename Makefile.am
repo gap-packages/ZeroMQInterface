@@ -8,8 +8,9 @@ lib_LTLIBRARIES = zeromqinterface.la
 zeromqinterface_la_SOURCES = \
     src/zmqgap.c \
     src/zmqgap.h
-zeromqinterface_la_CPPFLAGS = $(GAP_CPPFLAGS) -DCONFIG_H $(ZMQ_CPPFLAGS)
-zeromqinterface_la_LDFLAGS = -module -avoid-version
+zeromqinterface_la_CPPFLAGS = $(GAP_CPPFLAGS) $(ZMQ_CPPFLAGS)
+zeromqinterface_la_CFLAGS = $(GAP_CFLAGS)
+zeromqinterface_la_LDFLAGS = $(GAP_LDFLAGS) -module -avoid-version
 if SYS_IS_CYGWIN
 zeromqinterface_la_LDFLAGS += -no-undefined -version-info 0:0:0 -Wl,$(GAPROOT)/bin/$(GAPARCH)/gap.dll
 endif
