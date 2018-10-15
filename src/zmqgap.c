@@ -53,7 +53,7 @@ static void *ZmqContext;
 static void BadArgType(Obj obj, char *fname, int pos, char *expected) {
   char buf[1024];
   sprintf(buf, "Bad argument #%d of %s, expected %s, got %s",
-    pos, fname, expected, InfoBags[TNUM_OBJ(obj)].name);
+    pos, fname, expected, TNAM_OBJ(obj));
   ErrorQuit("%s", (Int) buf, 0L);
 }
 
