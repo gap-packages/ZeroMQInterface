@@ -16,7 +16,7 @@ Date := "02/03/2018", # dd/mm/yyyy format
 Persons := [
   rec(
     IsAuthor := true,
-    IsMaintainer := true,
+    IsMaintainer := false,
     FirstNames := "Markus",
     LastName := "Pfeiffer",
     WWWHome := "http://www.morphism.de/~markusp/",
@@ -45,6 +45,13 @@ Persons := [
                "Deutschland" ),
     Place := "Kaiserslautern",
     Institution := "Universität Kaiserslautern",
+  ),
+  rec(
+    LastName      := "GAP Team",
+    FirstNames    := "The",
+    IsAuthor      := false,
+    IsMaintainer  := true,
+    Email         := "support@gap-system.org",
   ),
 ],
 
