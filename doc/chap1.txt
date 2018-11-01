@@ -16,7 +16,21 @@
   to use them. Chapter [14X3[114X showcases one way of using [5XZeroMQInterface[105X.[133X
   
   
-  [1X1.3 [33X[0;0YFeedback[133X[101X
+  [1X1.3 [33X[0;0YInstallation[133X[101X
+  
+  [33X[0;0YTo  use  this  package  ZeroMQ ([7Xhttps://zeromq.org[107X) needs to be installed on
+  your  system and the [5XZeroMQInterface[105X package itself needs to be compiled. To
+  install   ZeroMQ  ([7Xhttps://zeromq.org[107X)  please  refer  to  its  installation
+  instructions  ([7Xhttp://zeromq.org/intro:get-the-software[107X).  To  compile  this
+  package, inside its root directory run:[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25X>[125X [27X./configure[127X[104X
+    [4X[25X>[125X [27Xmake[127X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.4 [33X[0;0YFeedback[133X[101X
   
   [33X[0;0YFor  bug  reports,  feature  requests  and suggestions, please use our issue
   tracker ([7Xhttps://github.com/gap-packages/ZeroMQInterface/issues[107X).[133X

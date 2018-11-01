@@ -10,13 +10,13 @@ SetPackageInfo( rec(
 
 PackageName := "ZeroMQInterface",
 Subtitle := "ZeroMQ bindings for GAP",
-Version := "0.10",
-Date := "02/03/2018", # dd/mm/yyyy format
+Version := "0.11",
+Date := "01/11/2018", # dd/mm/yyyy format
 
 Persons := [
   rec(
     IsAuthor := true,
-    IsMaintainer := true,
+    IsMaintainer := false,
     FirstNames := "Markus",
     LastName := "Pfeiffer",
     WWWHome := "http://www.morphism.de/~markusp/",
@@ -45,6 +45,13 @@ Persons := [
                "Deutschland" ),
     Place := "Kaiserslautern",
     Institution := "Universität Kaiserslautern",
+  ),
+  rec(
+    LastName      := "GAP Team",
+    FirstNames    := "The",
+    IsAuthor      := false,
+    IsMaintainer  := true,
+    Email         := "support@gap-system.org",
   ),
 ],
 

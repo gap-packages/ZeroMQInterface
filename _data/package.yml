@@ -1,6 +1,6 @@
 name: ZeroMQInterface
-version: 0.10
-date: 2018-03-02
+version: 0.11
+date: 2018-11-01
 description: |
     ZeroMQ bindings for GAP
 
@@ -11,8 +11,8 @@ authors:
       url: http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/
 
 maintainers:
-    - name: Markus Pfeiffer
-      url: http://www.morphism.de/~markusp/
+    - name: The GAP Team
+      url: mailto:support@gap-system.org
 
 GAP: ">= 4.9"
 
@@ -27,7 +27,7 @@ packageinfo: https://gap-packages.github.io/ZeroMQInterface/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/ZeroMQInterface/releases/download/v0.10/ZeroMQInterface-0.10.tar.gz
+      url: https://github.com/gap-packages/ZeroMQInterface/releases/download/v0.11/ZeroMQInterface-0.11.tar.gz
 
 abstract: |
 
