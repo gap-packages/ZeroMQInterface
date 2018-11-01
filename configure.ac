@@ -2,7 +2,7 @@ dnl ##
 dnl ## Setup autoconf
 dnl ##
 AC_PREREQ(2.68)
-AC_INIT([zeromq], m4_esyscmd([tr -d '\n' < VERSION]), [https://github.com/gap-packages/zeromq/issues])
+AC_INIT([zeromq], [package], [https://github.com/gap-packages/zeromq/issues], [ZeroMQInterface], [https://gap-packages.github.io/ZeroMQInterface/])
 AC_CONFIG_SRCDIR([src/zmqgap.c])
 AC_CONFIG_HEADER([src/pkgconfig.h:cnf/pkgconfig.h.in])
 AC_CONFIG_MACRO_DIR([m4])

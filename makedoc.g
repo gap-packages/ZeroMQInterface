@@ -16,5 +16,3 @@ AutoDoc(rec(
         )
     )
 ));
-
-PrintTo("VERSION", GAPInfo.PackageInfoCurrent.Version);
