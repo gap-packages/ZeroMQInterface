@@ -10,10 +10,10 @@
 ##
 
 
-BindGlobal("SynchronizationFamily",
-        NewFamily("SynchronizationFamily", IsObject));
+BindGlobal("ZmqSynchronizationFamily",
+        NewFamily("ZmqSynchronizationFamily", IsObject));
 DeclareFilter("IsZmqSocket", IsObject and IsInternalRep);
-BindGlobal("TYPE_ZMQ_SOCKET", NewType(SynchronizationFamily, IsZmqSocket));
+BindGlobal("TYPE_ZMQ_SOCKET", NewType(ZmqSynchronizationFamily, IsZmqSocket));
 
 BindGlobal("ZmqAttach", function(socket, addr)
   if addr <> "" and addr[1] = '+' then
