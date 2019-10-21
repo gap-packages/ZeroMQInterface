@@ -10,8 +10,6 @@
 ##
 
 
-BindGlobal("ZmqSynchronizationFamily",
-        NewFamily("ZmqSynchronizationFamily", IsObject));
 DeclareFilter("IsZmqSocket", IsObject and IsInternalRep);
 BindGlobal("TYPE_ZMQ_SOCKET", NewType(NewFamily("ZmqFamily", IsObject), IsZmqSocket));
 
