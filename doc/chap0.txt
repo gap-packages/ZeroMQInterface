@@ -6,17 +6,15 @@
                            [1X ZeroMQ bindings for [5XGAP[105X [101X
   
   
-                                      0.11
+                                      0.12
   
   
-                                1 November 2018
+                                1 November 2019
   
   
                                 Markus Pfeiffer
   
                                 Reimer Behrends
-  
-                                  The GAP Team
   
   
   
@@ -40,8 +38,6 @@
                 [33X[0;14YDeutschland[133X
   
   
-  The GAP Team
-      Email:    [7Xmailto:support@gap-system.org[107X
   
   -------------------------------------------------------
   [1XCopyright[101X
