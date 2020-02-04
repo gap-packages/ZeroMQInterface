@@ -5,7 +5,7 @@ addons:
     - libgmp-dev
     - libreadline-dev
     - zlib1g-dev
-    - libzmq-dev
+    - libczmq-dev
 
 matrix:
   include:
@@ -20,7 +20,7 @@ matrix:
           - libreadline-dev:i386
           - gcc-multilib
           - g++-multilib
-          - libzmq-dev:i386
+          - libczmq-dev:i386
 
 branches:
   only:
