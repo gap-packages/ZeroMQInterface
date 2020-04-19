@@ -11,7 +11,7 @@
 ##  This file was originally contributed to HPC-GAP by Reimer Behrends
 ##
 */
-#include "src/compiled.h"
+#include "compiled.h" // GAP headers
 #include "zmq.h"
 
 /* XXX this is HPC-GAP specific
