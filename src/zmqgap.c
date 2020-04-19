@@ -14,6 +14,8 @@
 #include "compiled.h" // GAP headers
 #include "zmq.h"
 
+#include <stdlib.h>
+
 /* XXX this is HPC-GAP specific
 static GVarDescriptor TYPE_ZMQ_SOCKETGVar;
 */
