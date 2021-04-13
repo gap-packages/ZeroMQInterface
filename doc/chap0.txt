@@ -6,10 +6,10 @@
                            [1X ZeroMQ bindings for [5XGAP[105X [101X
   
   
-                                      0.12
+                                      0.13
   
   
-                                1 November 2019
+                                 13 April 2021
   
   
                                 Markus Pfeiffer
