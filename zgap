@@ -53,7 +53,8 @@ for i in xrange(numnodes+1):
   log = open("%s/log%02d.txt" % (dir, i), "w")
   fp = open(node_file, "w")
   init = """
-  ReadLib("znode.g");
+  LoadPackage("ZeroMQInterface");
+  ReadPackage("ZeroMQInterface", "gap/znode.g");
   ZSetNodes(%d, [1..%d]);
   ZSetIncoming("ipc://%s/%02d.socket");
   """ % (i, numnodes, dir, i)

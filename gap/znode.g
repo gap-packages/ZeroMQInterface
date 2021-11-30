@@ -7,7 +7,7 @@ Incoming@ := fail;
 HandlerThread@ := fail;
 StartHandlerThread@ := fail;
 
-ZAll := `[];
+ZAll := MakeImmutable([]);
 ZSelf := fail;
 SelfAsString@ := fail;
 
@@ -211,13 +211,13 @@ end;
 ZResponse := function()
   local response;
   response := CreateSyncVar();
-  return `rec(
+  return MakeImmutable(rec(
     put := function(result)
       SyncWrite(response, MakeReadOnlyObj(result));
     end,
     get := -> SyncRead(response),
     test := -> SyncIsBound(response),
-  );
+  ));
 end;
 
 StartHandlerThread@ := function()
