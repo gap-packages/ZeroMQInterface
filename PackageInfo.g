@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "ZeroMQInterface",
 Subtitle := "ZeroMQ bindings for GAP",
-Version := "0.13",
-Date := "13/04/2021", # dd/mm/yyyy format
+Version := "0.14",
+Date := "29/07/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -85,7 +85,7 @@ AbstractHTML   :=  "",
 PackageDoc := rec(
   BookName  := "ZeroMQInterface",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "ZeroMQ bindings for GAP",
