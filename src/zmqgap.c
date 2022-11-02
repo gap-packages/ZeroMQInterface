@@ -652,16 +652,11 @@ static Int InitLibrary ( StructInitInfo *module )
 */
 
 static StructInitInfo module = {
-    .type = MODULE_BUILTIN,
+    .type = MODULE_DYNAMIC,
     .name = "zmq",
     .initKernel = InitKernel,
     .initLibrary = InitLibrary,
 };
-
-StructInitInfo *InitInfoZmq ( void )
-{
-  return &module;
-}
 
 StructInitInfo * Init__Dynamic ( void )
 {
