@@ -37,6 +37,16 @@ AC_DEFUN([AX_ZMQ], [
     AC_ARG_WITH([zmq], [AS_HELP_STRING([--with-zmq=<prefix>],[ZMQ prefix directory])], [
         ZMQ_LDFLAGS="-L${with_zmq}/lib"
         ZMQ_CPPFLAGS="-I${with_zmq}/include"
+    ],
+    [
+    # no --with-zmq given, so we try to check if hombrew (macos) is present
+    AS_IF([command -v brew >/dev/null 2>&1],[
+        AC_MSG_NOTICE([BREW detected])
+        with_zmq=$(brew --prefix)
+        ])
+
+    ZMQ_LDFLAGS="-L${with_zmq}/opt/zeromq/lib"
+    ZMQ_CPPFLAGS="-I${with_zmq}/opt/zeromq/include"    
     ])
 
     HAVE_ZMQ=0
