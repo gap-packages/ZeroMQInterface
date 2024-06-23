@@ -43,10 +43,9 @@ AC_DEFUN([AX_ZMQ], [
     AS_IF([command -v brew >/dev/null 2>&1],[
         AC_MSG_NOTICE([BREW detected])
         with_zmq=$(brew --prefix)
+        ZMQ_LDFLAGS="-L${with_zmq}/opt/zeromq/lib"
+        ZMQ_CPPFLAGS="-I${with_zmq}/opt/zeromq/include"    
         ])
-
-    ZMQ_LDFLAGS="-L${with_zmq}/opt/zeromq/lib"
-    ZMQ_CPPFLAGS="-I${with_zmq}/opt/zeromq/include"    
     ])
 
     HAVE_ZMQ=0
