@@ -39,12 +39,12 @@ AC_DEFUN([AX_ZMQ], [
         ZMQ_CPPFLAGS="-I${with_zmq}/include"
     ],
     [
-    # no --with-zmq given, so we try to check if hombrew (macos) is present
-    AS_IF([command -v brew >/dev/null 2>&1],[
-        AC_MSG_NOTICE([BREW detected])
-        with_zmq=$(brew --prefix)
-        ZMQ_LDFLAGS="-L${with_zmq}/opt/zeromq/lib"
-        ZMQ_CPPFLAGS="-I${with_zmq}/opt/zeromq/include"    
+    # no --with-zmq given, so we try to check if hombrew zeromq (macos) is present
+    AS_IF([command -v brew --prefix zeromq >/dev/null 2>&1],[
+        AC_MSG_NOTICE([BREW zeromq detected])
+        with_zmq=$(brew --prefix zeromq)
+        ZMQ_LDFLAGS="-L${with_zmq}/lib"
+        ZMQ_CPPFLAGS="-I${with_zmq}/include"    
         ])
     ])
 
