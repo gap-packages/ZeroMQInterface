@@ -36,7 +36,7 @@ To compile this package, inside its root directory run:
 </Log>
 Or
 <Log>
-> ./configure --with-zmq=<path-to-your-zeromq>
+> ./configure --with-zmq=path-to-your-zeromq
 > make
 </Log>
 to specify where &ZeroMQ; is located in you system.
