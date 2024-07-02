@@ -18,8 +18,8 @@ concurrency:
 jobs:
   # The CI test job
   test:
-    name: ${{ matrix.gap-branch }}
-    runs-on: ubuntu-latest
+    name: ${{ matrix.gap-branch }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -30,13 +30,21 @@ jobs:
           - stable-4.11
           - stable-4.10
           - stable-4.9
+        os: [ubuntu-latest]
+        include:
+          - gap-branch: master
+            os: macos-latest
 
     steps:
       - uses: actions/checkout@v4
       - name: 'Install additional dependencies'
         run: |
-          sudo apt-get update
-          sudo apt-get install libczmq-dev
+          if [ "$RUNNER_OS" == "macOS" ]; then
+            brew install zmq
+          else
+            sudo apt-get update
+            sudo apt-get install libczmq-dev
+          fi
       - uses: gap-actions/setup-gap@v2
         with:
           GAPBRANCH: ${{ matrix.gap-branch }}
