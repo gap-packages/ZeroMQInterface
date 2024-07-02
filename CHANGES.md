@@ -1,5 +1,15 @@
 # CHANGES to the 'ZeroMQInterface' GAP package
 
+## 0.15 (2024-07-02)
+
+  - Automatically detect ZeroMQ installed via Homebrew on macOS
+  - Various janitorial changes
+
+## 0.14 (2022-07-29)
+
+  - Tweak build system
+  - Various janitorial changes
+
 ## 0.13 (2021-04-13)
 
   - Replace the build system with a new one
