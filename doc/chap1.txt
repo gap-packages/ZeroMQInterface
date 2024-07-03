@@ -29,6 +29,15 @@
     [4X[25X>[125X [27Xmake[127X[104X
   [4X[32X[104X
   
+  [33X[0;0YOr[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25X>[125X [27X./configure --with-zmq=path-to-your-zeromq[127X[104X
+    [4X[25X>[125X [27Xmake[127X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Yto specify where ZeroMQ ([7Xhttps://zeromq.org[107X) is located in you system.[133X
+  
   
   [1X1.4 [33X[0;0YFeedback[133X[101X
   

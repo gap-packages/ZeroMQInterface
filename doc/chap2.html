@@ -100,7 +100,7 @@
 
 <h5>2.1-1 <span class="Heading">The TCP transport</span></h5>
 
-<p>TCP URIs map to POSIX TCP stream sockets. The URI is of the form <code class="code">tcp://&lt;address&gt;:&lt;port&gt;</code> or <code class="code">tcp://*:&lt;port&gt;</code>. Here, <code class="code">address</code> is an internet address, either an IP address or a symbolic address (note that to resolve symbolic addresses, the library may have to consult DNS servers, which can take an indefinite amount of time or even fail). Port is a TCP port number. If a "*" is given instead of an address, this describes the so-called unspecified address; the URI can only be used for binding and will then accept incoming connections from all interfaces (as in binding to "0.0.0.0" in IPv4 or "::" in IPv6).</p>
+<p>TCP URIs map to POSIX TCP stream sockets. The URI is of the form <code class="code">tcp://&lt;address&gt;:&lt;port&gt;</code> or <code class="code">tcp://*:&lt;port&gt;</code>. Here, <code class="code">address</code> is an internet address, either an IP address or a symbolic address (note that to resolve symbolic addresses, the library may have to consult DNS servers, which can take an indefinite amount of time or even fail). Port is a TCP port number. If a <q>*</q> is given instead of an address, this describes the so-called unspecified address; the URI can only be used for binding and will then accept incoming connections from all interfaces (as in binding to <q>0.0.0.0</q> in IPv4 or <q>::</q> in IPv6).</p>
 
 <p><a id="X792BDF3F7AB76A99" name="X792BDF3F7AB76A99"></a></p>
 
@@ -124,7 +124,7 @@
 
 <h4>2.2 <span class="Heading">Creating and closing sockets</span></h4>
 
-<p>Sockets are generally being created via calls to <code class="func">ZmqPushSocket</code> (<a href="chap2.html#X7E37F9DD7F0977F2"><span class="RefLink">2.2-1</span></a>), etc. Each such call takes two optional arguments, a URI and an identity. If a URI is given, a call to <code class="func">ZmqAttach</code> (<a href="chap2.html#X7C17743C874D56CF"><span class="RefLink">2.3-3</span></a>) will be performed immediately with the socket and URI. In particular, if the URI is prefixed with a "+" character, then the socket will connect to the address specified by the part after the "+" character; otherwise, it will be bound to the URI.</p>
+<p>Sockets are generally being created via calls to <code class="func">ZmqPushSocket</code> (<a href="chap2.html#X7E37F9DD7F0977F2"><span class="RefLink">2.2-1</span></a>), etc. Each such call takes two optional arguments, a URI and an identity. If a URI is given, a call to <code class="func">ZmqAttach</code> (<a href="chap2.html#X7C17743C874D56CF"><span class="RefLink">2.3-3</span></a>) will be performed immediately with the socket and URI. In particular, if the URI is prefixed with a <q>+</q> character, then the socket will connect to the address specified by the part after the <q>+</q> character; otherwise, it will be bound to the URI.</p>
 
 
 <div class="example"><pre>
@@ -195,7 +195,7 @@
 <h5>2.2-9 ZmqSocket</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZmqSocket</code>( <var class="Arg">type</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><code class="code">ZmqSocket</code> is a low-level function that is used by <code class="code">ZmqPushSocket</code> etc. to create sockets. Its argument is a string, one of "PUSH", "PULL", "REP", "REQ", "PUB", "SUB", "DEALER", "ROUTER", and it creates and returns a socket of that type.</p>
+<p><code class="code">ZmqSocket</code> is a low-level function that is used by <code class="code">ZmqPushSocket</code> etc. to create sockets. Its argument is a string, one of <q>PUSH</q>, <q>PULL</q>, <q>REP</q>, <q>REQ</q>, <q>PUB</q>, <q>SUB</q>, <q>DEALER</q>, <q>ROUTER</q>, and it creates and returns a socket of that type.</p>
 
 <p><a id="X878D7DF3846B3431" name="X878D7DF3846B3431"></a></p>
 
@@ -241,7 +241,7 @@
 <h5>2.3-3 ZmqAttach</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ZmqAttach</code>( <var class="Arg">socket</var>, <var class="Arg">uri</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><code class="code">ZmqAttach</code> is a unified interface for binding and connecting a socket. If <code class="code">uri</code> begins with a "+" character, then the <code class="func">ZmqConnect</code> (<a href="chap2.html#X7D00EE937F96175E"><span class="RefLink">2.3-2</span></a>) is called with the socket and the rest of the <code class="code">uri</code> string following the "+". Otherwise, <code class="func">ZmqBind</code> (<a href="chap2.html#X7F4A98227D65B573"><span class="RefLink">2.3-1</span></a>) is called with these arguments. The intended use is to construct a network of connections from a list of strings.</p>
+<p><code class="code">ZmqAttach</code> is a unified interface for binding and connecting a socket. If <code class="code">uri</code> begins with a <q>+</q> character, then the <code class="func">ZmqConnect</code> (<a href="chap2.html#X7D00EE937F96175E"><span class="RefLink">2.3-2</span></a>) is called with the socket and the rest of the <code class="code">uri</code> string following the <q>+</q>. Otherwise, <code class="func">ZmqBind</code> (<a href="chap2.html#X7F4A98227D65B573"><span class="RefLink">2.3-1</span></a>) is called with these arguments. The intended use is to construct a network of connections from a list of strings.</p>
 
 <p><a id="X7CB8FB7F8377B620" name="X7CB8FB7F8377B620"></a></p>
 
@@ -485,6 +485,6 @@ false
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>
