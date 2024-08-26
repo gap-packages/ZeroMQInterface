@@ -1,5 +1,9 @@
 # CHANGES to the 'ZeroMQInterface' GAP package
 
+## 0.16 (2024-08-27)
+
+  - Require GAP >= 4.12 so that LoadKernelExtension can be used
+
 ## 0.15 (2024-07-02)
 
   - Automatically detect ZeroMQ installed via Homebrew on macOS
