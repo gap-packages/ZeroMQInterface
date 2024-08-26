@@ -63,8 +63,8 @@ ArchiveURL     := Concatenation("https://github.com/gap-packages/ZeroMQInterface
                                 "/ZeroMQInterface-", ~.Version),
 README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-SourceRepository := rec( 
-  Type := "git", 
+SourceRepository := rec(
+  Type := "git",
   URL := "https://github.com/gap-packages/ZeroMQInterface"
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
@@ -92,20 +92,21 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">= 4.9",
+  GAP := ">= 4.12",
   NeededOtherPackages := [ [ "GAPDoc", ">= 1.6.1" ] ],
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ],
 ),
 
 AvailabilityTest := function()
-        if not "ZeroMQInterface" in SHOW_STAT() and
-           Filename(DirectoriesPackagePrograms("ZeroMQInterface"), "zeromqinterface.so") = fail then
-          #Info(InfoWarning, 1, "ZeroMQInterface: kernel ZeroMQInterface functions not available.");
-          return fail;
-        fi;
-        return true;
-    end,
+  if not IsKernelExtensionAvailable("zeromqinterface") then
+    LogPackageLoadingMessage(PACKAGE_WARNING,
+                            ["the kernel module is not compiled, ",
+                             "the package cannot be loaded."]);
+    return fail;
+  fi;
+  return true;
+end,
 
 TestFile := "tst/testall.g",
 
@@ -115,14 +116,14 @@ AutoDoc := rec(
     TitlePage := rec(
         Copyright :=
 """&copyright; 2015-17 by Markus Pfeiffer, Reimer Behrends and others<P/>
-The &ZeroMQInterface; package is free software; 
-you can redistribute it and/or modify it under the terms of the 
-<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL> 
-as published by the Free Software Foundation; either version 2 of the License, 
+The &ZeroMQInterface; package is free software;
+you can redistribute it and/or modify it under the terms of the
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+as published by the Free Software Foundation; either version 2 of the License,
 or (at your option) any later version.""",
         Acknowledgements :=
-"""We appreciate very much all past and future comments, suggestions and 
-contributions to this package and its documentation provided by &GAP; 
+"""We appreciate very much all past and future comments, suggestions and
+contributions to this package and its documentation provided by &GAP;
 users and developers.""",
     ),
 ),
@@ -130,5 +131,3 @@ users and developers.""",
 
 
 ));
-
-
