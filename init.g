@@ -8,14 +8,9 @@
 ##  to the COPYRIGHT.md and LICENSE files for details.
 ##
 
-if (not IsBound(__GAPZEROMQ_C)) and ("ZeroMQInterface" in SHOW_STAT()) then
-    LoadStaticModule("zeromqinterface");
+if not LoadKernelExtension("zeromqinterface") then
+  Error("failed to load the ZeroMQInterface package kernel extension");
 fi;
-if (not IsBound(__GAPZEROMQ_C)) and
-   (Filename(DirectoriesPackagePrograms("ZeroMQInterface"), "zeromqinterface.so") <> fail) then
-    LoadDynamicModule(Filename(DirectoriesPackagePrograms("ZeroMQInterface"),
-                               "zeromqinterface.so"));
-fi;
+
 
 ReadPackage("ZeroMQInterface", "gap/zmq.g");
-
