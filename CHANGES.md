@@ -1,5 +1,9 @@
 # CHANGES to the 'ZeroMQInterface' GAP package
 
+## 0.17 (2025-20-06)
+
+  - Janitorial changes
+
 ## 0.16 (2024-08-27)
 
   - Require GAP >= 4.12 so that LoadKernelExtension can be used
