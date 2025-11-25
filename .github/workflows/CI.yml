@@ -36,7 +36,7 @@ jobs:
             os: macos-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: 'Install additional dependencies'
         run: |
           if [ "$RUNNER_OS" == "macOS" ]; then
