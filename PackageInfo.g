@@ -95,6 +95,7 @@ Dependencies := rec(
   GAP := ">= 4.12",
   NeededOtherPackages := [ [ "GAPDoc", ">= 1.6.1" ] ],
   SuggestedOtherPackages := [ ],
+  NeededSystemPackages := rec( Ubuntu := [["libzmq3-dev"]], Homebrew := [["zmq"]] ),
   ExternalConditions := [ ],
 ),
 
