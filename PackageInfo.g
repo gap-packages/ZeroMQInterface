@@ -1,103 +1,134 @@
-#############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
-##
-
+#
+# ZeroMQInterface: ZeroMQ bindings for GAP
+#
+# This file contains package meta data. For additional information on
+# the meaning and correct usage of these fields, please consult the
+# manual of the "Example" package as well as the comments in its
+# PackageInfo.g file.
+#
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
-
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.4",
-Date := "10/04/2025", # dd/mm/yyyy format
-License := "0BSD",
+PackageName := "ZeroMQInterface",
+Subtitle := "ZeroMQ bindings for GAP",
+Version := "0.18",
+Date := "09/04/2026", # dd/mm/yyyy format
+License := "GPL-2.0-or-later",
 
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "mhorn@rptu.de",
-    WWWHome       := "https://www.quendi.de/math",
-    GitHubUsername:= "fingolfin",
+    IsAuthor := true,
+    IsMaintainer := false,
+    FirstNames := "Markus",
+    LastName := "Pfeiffer",
+    WWWHome := "http://www.morphism.de/~markusp/",
+    Email := "markus.pfeiffer@st-andrews.ac.uk",
     PostalAddress := Concatenation(
-                       "Fachbereich Mathematik\n",
-                       "RPTU Kaiserslautern-Landau\n",
-                       "Gottlieb-Daimler-Straße 48\n",
-                       "67663 Kaiserslautern\n",
-                       "Germany" ),
-    Place         := "Kaiserslautern, Germany",
-    Institution   := "RPTU Kaiserslautern-Landau"
+               "School of Computer Science\n",
+               "University of St Andrews\n",
+               "Jack Cole Building, North Haugh\n",
+               "St Andrews, Fife, KY16 9SX\n",
+               "United Kingdom" ),
+    Place := "St Andrews",
+    Institution := "University of St Andrews",
   ),
-
   rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
+    IsAuthor := true,
+    IsMaintainer := false,
+    FirstNames := "Reimer",
+    LastName := "Behrends",
+    WWWHome := "http://www.mathematik.uni-kl.de/agag/mitglieder/wissenschaftliche-mitarbeiter/dr-reimer-behrends/",
+    Email := "behrends@gmail.com",
+    PostalAddress := Concatenation(
+               "Technische Universität Kaiserslautern\n",
+               "Fachbereich Mathematik\n",
+               "Postfach 3049\n",
+               "67653 Kaiserslautern\n",
+               "Deutschland" ),
+    Place := "Kaiserslautern",
+    Institution := "Universität Kaiserslautern",
   ),
-
   rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
+    LastName      := "GAP Team",
+    FirstNames    := "The",
     IsAuthor      := false,
     IsMaintainer  := true,
-    #Email         := "janitor@example.com",
+    Email         := "support@gap-system.org",
   ),
 ],
 
-Status := "other",
+PackageWWWHome := "https://gap-packages.github.io/ZeroMQInterface/",
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
+ArchiveURL     := Concatenation("https://github.com/gap-packages/ZeroMQInterface/",
+                                "releases/download/v", ~.Version,
+                                "/ZeroMQInterface-", ~.Version),
 README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
+SourceRepository := rec(
+  Type := "git",
+  URL := "https://github.com/gap-packages/ZeroMQInterface"
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+ArchiveFormats := ".tar.gz",
 
-ArchiveFormats := ".tar.gz .tar.bz2",
+##  Status information. Currently the following cases are recognized:
+##    "accepted"      for successfully refereed packages
+##    "submitted"     for packages submitted for the refereeing
+##    "deposited"     for packages for which the GAP developers agreed
+##                    to distribute them with the core GAP system
+##    "dev"           for development versions of packages
+##    "other"         for all other packages
+##
+Status := "deposited",
 
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "ZeroMQInterface",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
+  LongTitle := "ZeroMQ bindings for GAP",
 ),
 
-# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">= 4.12",
+  NeededOtherPackages := [ [ "GAPDoc", ">= 1.6.1" ] ],
+  SuggestedOtherPackages := [ ],
+  NeededSystemPackages := rec( Ubuntu := [["libzmq3-dev"]], Homebrew := [["zmq"]] ),
+  ExternalConditions := [ ],
 ),
 
-AvailabilityTest := ReturnTrue,
+AvailabilityTest := function()
+  if not IsKernelExtensionAvailable("zeromqinterface") then
+    LogPackageLoadingMessage(PACKAGE_WARNING,
+                            ["the kernel module is not compiled, ",
+                             "the package cannot be loaded."]);
+    return false;
+  fi;
+  return true;
+end,
 
-Keywords := ["GitHub Pages", "GAP"]
+TestFile := "tst/testall.g",
+
+Keywords := [ "zeromq", "messaging", "distributed" ],
+
+AutoDoc := rec(
+    TitlePage := rec(
+        Copyright :=
+"""&copyright; 2015-17 by Markus Pfeiffer, Reimer Behrends and others<P/>
+The &ZeroMQInterface; package is free software;
+you can redistribute it and/or modify it under the terms of the
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+as published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.""",
+        Acknowledgements :=
+"""We appreciate very much all past and future comments, suggestions and
+contributions to this package and its documentation provided by &GAP;
+users and developers.""",
+    ),
+),
+
+
 
 ));
-
-
