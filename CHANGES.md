@@ -1,5 +1,9 @@
 # CHANGES to the 'ZeroMQInterface' GAP package
 
+## 0.18 (2026-04-09)
+
+  - Janitorial changes
+
 ## 0.17 (2025-20-06)
 
   - Janitorial changes
