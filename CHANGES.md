@@ -4,7 +4,7 @@
 
   - Janitorial changes
 
-## 0.17 (2025-20-06)
+## 0.17 (2025-06-20)
 
   - Janitorial changes
 
